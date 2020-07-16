@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#ASSIGNMENT 1
+
+## ==TODO==
+
+### Requirements
+
+#### `React, Redux, Redux middlewares, Bootstraps, (Input validate)`
+
+- [] Initialize app with create-react-app
+- []
+- []
+
 ## Available Scripts
 
 In the project directory, you can run:
