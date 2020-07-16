@@ -11,46 +11,45 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - []
 
 ### Project structure
-
 D:.
-| .gitignore
-| output.txt
-| package-lock.json
-| package.json
-| README.md
-|  
+|   .gitignore
+|   output.txt
+|   package-lock.json
+|   package.json
+|   README.md
+|   
 +---public
-| favicon.ico
-| index.html
-| logo192.png
-| logo512.png
-| manifest.json
-| robots.txt
-|  
+|       favicon.ico
+|       index.html
+|       logo192.png
+|       logo512.png
+|       manifest.json
+|       robots.txt
+|       
 +---src
-| App.js
-| App.test.js
-| index.js
-| serviceWorker.js
-| setupTests.js
-|  
- +---api
-| authApi.js
-| axiosClient.js
-|  
- +---components
-+---redux
-| | store.js
-| |  
- | +---actions
-| | types.js
-| |  
- | +---reducers
-| index.js
-|  
- +---styles
-index.css
-index.scss
+    |   App.js
+    |   App.test.js
+    |   index.js
+    |   serviceWorker.js
+    |   setupTests.js
+    |   
+    +---api
+    |       authApi.js
+    |       axiosClient.js
+    |       
+    +---components
+    +---redux
+    |   |   store.js
+    |   |   
+    |   +---actions
+    |   |       types.js
+    |   |       
+    |   +---reducers
+    |           index.js
+    |           
+    +---styles
+            index.css
+            index.scss
 
 ## Available Scripts
 
