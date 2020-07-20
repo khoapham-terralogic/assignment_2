@@ -1,0 +1,22 @@
+.logo {
+  .logo-img {
+    width: 75%;
+  }
+  .logo-title {
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 0.9rem;
+    margin-top: 2.2rem;
+    font-weight: 700;
+    color: $grey;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .logo {
+    .logo-title {
+      line-height: 2;
+      font-size: 1.1rem;
+    }
+  }
+}

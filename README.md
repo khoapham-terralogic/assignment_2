@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### `React, Redux, Redux middlewares, Bootstraps, (Input validate)`
 
 - [x] Initialize app with create-react-app
-- []
+- [x] Done
 - []
 
 ### Project structure
