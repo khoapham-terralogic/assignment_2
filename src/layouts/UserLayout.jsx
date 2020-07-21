@@ -4,13 +4,13 @@ import UserPage from '../features/auth-feature/main/pages/UserPage';
 const UserLayout = () => {
 
     return (
-        <div className="user-container">
-            <div className="row user-container-header">
-                <div className="col-xs-12 user-container-header-wrapper">
-                    <div className="user-container-header-title">
+        <div className="user__container">
+            <div className="row user__container__header">
+                <div className="col-xs-12 user__container__header__wrapper">
+                    <div className="user__container__header__title">
                         My Profile
                     </div>
-                    <div className="user-container-header-description">
+                    <div className="user__container__header__description">
                         Manage your profile and contact information.
                     </div>
                 </div>

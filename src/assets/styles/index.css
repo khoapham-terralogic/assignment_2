@@ -14,26 +14,26 @@
           align-items: center;
 }
 
-.auth .auth-container .auth-container-left {
+.auth .auth__container .auth__container__left {
   width: 100%;
 }
 
-.auth .auth-container .auth-container-right {
+.auth .auth__container .auth__container__right {
   display: none;
 }
 
 @media screen and (min-width: 900px) {
-  .auth .auth-container {
+  .auth .auth__container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
-  .auth .auth-container .auth-container-left {
+  .auth .auth__container .auth__container__left {
     width: 55%;
     margin-left: 9.8rem;
   }
-  .auth .auth-container .auth-container-right {
+  .auth .auth__container .auth__container__right {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -44,18 +44,18 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .auth .auth-container .auth-container-right .auth-container-right-img {
+  .auth .auth__container .auth__container__right .auth__container__right-img {
     width: 80%;
   }
 }
 
-.user-container {
+.user__container {
   width: 100%;
   height: 100vh;
   font-family: "Raleway", sans-serif;
 }
 
-.user-container .user-container-header {
+.user__container .user__container__header {
   width: 100%;
   height: 16vh;
   background-color: #4d0c5a;
@@ -66,7 +66,7 @@
   margin: 0;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -74,32 +74,32 @@
   padding: 1.2rem 2.9rem;
 }
 
-.user-container .user-container-header .user-container-header-wrapper .user-container-header-title {
+.user__container .user__container__header .user__container__header__wrapper .user__container__header__title {
   font-size: 2.3rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.user-container .user-container-header .user-container-header-wrapper .user-container-header-description {
+.user__container .user__container__header .user__container__header__wrapper .user__container__header__description {
   font-size: 1.2rem;
   opacity: 0.8;
 }
 
-.user-container .user-container-body {
+.user__container .user__container-body {
   padding: 1.1rem 2.9rem;
 }
 
-.user-container .user-container-body .user-container-body-main-line {
+.user__container .user__container-body .user__container-body-main-line {
   width: 100%;
   height: 1px;
   background-color: #cccccc;
 }
 
-.user-container .user-container-body .row {
+.user__container .user__container-body .row {
   padding: 1.1rem 0;
 }
 
-.user-container .user-container-body .row .user-container-body-header {
+.user__container .user__container-body .row .user__container-body-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,13 +115,13 @@
           align-items: center;
 }
 
-.user-container .user-container-body .row .user-container-body-header .user-container-body-header-img {
+.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
 }
 
-.user-container .user-container-body .row .user-container-body-header .user-container-body-header-name {
+.user__container .user__container-body .row .user__container-body-header .user__container-body-header-name {
   color: #4d0c5a;
   font-size: 2.4rem;
   font-weight: 700;
@@ -129,18 +129,18 @@
   letter-spacing: 0.2px;
 }
 
-.user-container .user-container-body .row .user-container-body-main-description {
+.user__container .user__container-body .row .user__container-body-main-description {
   font-size: 1.2rem;
   font-weight: 700;
   color: #bfc2d3;
 }
 
-.user-container .user-container-body .row .user-container-body-main .form-group {
+.user__container .user__container-body .row .user__container-body-main .form-group {
   position: relative;
   width: 100%;
 }
 
-.user-container .user-container-body .row .user-container-body-main .form-group .form-control {
+.user__container .user__container-body .row .user__container-body-main .form-group .form-control {
   color: #212020;
   font-weight: 700;
   font-size: 1.1rem;
@@ -150,13 +150,13 @@
   border: solid 1px rgba(33, 32, 32, 0.541);
 }
 
-.user-container .user-container-body .row .user-container-body-main .form-group .form-control:focus {
+.user__container .user__container-body .row .user__container-body-main .form-group .form-control:focus {
   outline: none;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
-.user-container .user-container-body .row .user-container-body-main .form-group .form-control__floating-label {
+.user__container .user__container-body .row .user__container-body-main .form-group .form-control__floating-label {
   position: absolute;
   top: 0%;
   left: 2%;
@@ -170,7 +170,7 @@
   color: #212020;
 }
 
-.user-container .user-container-body .row .user-container-body-main .form-group .form-group-rearSvg {
+.user__container .user__container-body .row .user__container-body-main .form-group .form-group-rearSvg {
   position: absolute;
   top: 50%;
   right: 4%;
@@ -178,11 +178,11 @@
           transform: translateY(-50%);
 }
 
-.user-container .user-container-body .row .user-container-body-main .form-group .form-group-rearSvg:hover {
+.user__container .user__container-body .row .user__container-body-main .form-group .form-group-rearSvg:hover {
   cursor: pointer;
 }
 
-.user-container .user-container-body .row .login-body-btn-group {
+.user__container .user__container-body .row .login-body-btn-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,7 +196,7 @@
   margin: 0;
 }
 
-.user-container .user-container-body .row .login-body-btn-group .nav-link {
+.user__container .user__container-body .row .login-body-btn-group .nav-link {
   padding: 0.8rem 2.6rem;
   font-size: 1.4rem;
   font-weight: 700;
@@ -204,39 +204,39 @@
   text-align: center;
 }
 
-.user-container .user-container-body .row .login-body-btn-group .nav-link:nth-child(2) {
+.user__container .user__container-body .row .login-body-btn-group .nav-link:nth-child(2) {
   margin: 0 3rem;
 }
 
-.user-container .user-container-body .row .login-body-btn-group .nav-link-btn {
+.user__container .user__container-body .row .login-body-btn-group .nav-link-btn {
   color: #fff;
   background-color: #bd10e0;
 }
 
-.user-container .user-container-body .row .login-body-btn-group .nav-link-custom {
+.user__container .user__container-body .row .login-body-btn-group .nav-link-custom {
   border: 1.8px solid #bd10e0;
 }
 
 @media screen and (min-width: 900px) {
-  .user-container > .user-container-header {
+  .user__container > .user__container__header {
     padding: 1.2rem 13.2rem;
   }
-  .user-container > .user-container-header .user-container-header-wrapper .user-container-header-title {
+  .user__container > .user__container__header .user__container__header__wrapper .user__container__header__title {
     font-size: 3rem;
   }
-  .user-container > .user-container-header .user-container-header-wrapper .user-container-header-description {
+  .user__container > .user__container__header .user__container__header__wrapper .user__container__header__description {
     font-size: 1.8rem;
   }
-  .user-container > .user-container-body {
+  .user__container > .user__container-body {
     padding: 1.2rem 13.2rem;
   }
-  .user-container > .user-container-body-header-name {
+  .user__container > .user__container-body-header-name {
     font-size: 3;
   }
-  .user-container > .form-group {
+  .user__container > .form-group {
     width: 95%;
   }
-  .user-container > .nav-link {
+  .user__container > .nav-link {
     font-size: 1.6rem;
   }
 }
@@ -293,6 +293,64 @@
 .login .login-body .form-group .fullName-group,
 .login .login-body .form-group .phoneNumber-group {
   position: relative;
+}
+
+.login .login-body .form-group .email-group .email-group--valid,
+.login .login-body .form-group .email-group .password-group--valid,
+.login .login-body .form-group .email-group .conPassword-group--valid,
+.login .login-body .form-group .email-group .fullName-group--valid,
+.login .login-body .form-group .email-group .phoneNumber-group--valid,
+.login .login-body .form-group .password-group .email-group--valid,
+.login .login-body .form-group .password-group .password-group--valid,
+.login .login-body .form-group .password-group .conPassword-group--valid,
+.login .login-body .form-group .password-group .fullName-group--valid,
+.login .login-body .form-group .password-group .phoneNumber-group--valid,
+.login .login-body .form-group .conPassword-group .email-group--valid,
+.login .login-body .form-group .conPassword-group .password-group--valid,
+.login .login-body .form-group .conPassword-group .conPassword-group--valid,
+.login .login-body .form-group .conPassword-group .fullName-group--valid,
+.login .login-body .form-group .conPassword-group .phoneNumber-group--valid,
+.login .login-body .form-group .fullName-group .email-group--valid,
+.login .login-body .form-group .fullName-group .password-group--valid,
+.login .login-body .form-group .fullName-group .conPassword-group--valid,
+.login .login-body .form-group .fullName-group .fullName-group--valid,
+.login .login-body .form-group .fullName-group .phoneNumber-group--valid,
+.login .login-body .form-group .phoneNumber-group .email-group--valid,
+.login .login-body .form-group .phoneNumber-group .password-group--valid,
+.login .login-body .form-group .phoneNumber-group .conPassword-group--valid,
+.login .login-body .form-group .phoneNumber-group .fullName-group--valid,
+.login .login-body .form-group .phoneNumber-group .phoneNumber-group--valid {
+  -webkit-box-shadow: 0 0 7px 1px #bd10e0;
+          box-shadow: 0 0 7px 1px #bd10e0;
+}
+
+.login .login-body .form-group .email-group .email-group--invalid,
+.login .login-body .form-group .email-group .password-group--invalid,
+.login .login-body .form-group .email-group .conPassword-group--invalid,
+.login .login-body .form-group .email-group .fullName-group--invalid,
+.login .login-body .form-group .email-group .phoneNumber-group--invalid,
+.login .login-body .form-group .password-group .email-group--invalid,
+.login .login-body .form-group .password-group .password-group--invalid,
+.login .login-body .form-group .password-group .conPassword-group--invalid,
+.login .login-body .form-group .password-group .fullName-group--invalid,
+.login .login-body .form-group .password-group .phoneNumber-group--invalid,
+.login .login-body .form-group .conPassword-group .email-group--invalid,
+.login .login-body .form-group .conPassword-group .password-group--invalid,
+.login .login-body .form-group .conPassword-group .conPassword-group--invalid,
+.login .login-body .form-group .conPassword-group .fullName-group--invalid,
+.login .login-body .form-group .conPassword-group .phoneNumber-group--invalid,
+.login .login-body .form-group .fullName-group .email-group--invalid,
+.login .login-body .form-group .fullName-group .password-group--invalid,
+.login .login-body .form-group .fullName-group .conPassword-group--invalid,
+.login .login-body .form-group .fullName-group .fullName-group--invalid,
+.login .login-body .form-group .fullName-group .phoneNumber-group--invalid,
+.login .login-body .form-group .phoneNumber-group .email-group--invalid,
+.login .login-body .form-group .phoneNumber-group .password-group--invalid,
+.login .login-body .form-group .phoneNumber-group .conPassword-group--invalid,
+.login .login-body .form-group .phoneNumber-group .fullName-group--invalid,
+.login .login-body .form-group .phoneNumber-group .phoneNumber-group--invalid {
+  -webkit-box-shadow: 0 0 7px 1px #121212;
+          box-shadow: 0 0 7px 1px #121212;
 }
 
 .login .login-body .form-group .email-group .form-control,
@@ -392,7 +450,16 @@
   border-radius: 22rem;
   font-weight: 700;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login .login-body .login-body-btn-group .nav-link-custom {
@@ -423,8 +490,10 @@
   .login > .login-header {
     font-size: 2.4rem;
   }
-  .login >,
-  .login .form-group {
+  .login > .form-group {
+    font-size: 1.4rem;
+  }
+  .login > .nav-link {
     font-size: 1.4rem;
   }
 }

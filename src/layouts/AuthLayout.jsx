@@ -10,8 +10,8 @@ const AuthLayout = () => {
     const match = useRouteMatch();
     return (
         <section className="auth">
-            <div className="auth-container">
-                <div className="auth-container-left">
+            <div className="auth__container">
+                <div className="auth__container__left">
                     <Logo />
                     <Switch>
                         <Redirect from="/auth" exact to="/auth/login" />
@@ -19,8 +19,8 @@ const AuthLayout = () => {
                         <Route path={`${match.url}/register`} exact render={() => <RegisterPage />} />
                     </Switch>
                 </div>
-                <div className="auth-container-right">
-                    <img className="auth-container-right-img" src={rightImage} alt="img" />
+                <div className="auth__container__right">
+                    <img className="auth__container__right-img" src={rightImage} alt="img" />
                 </div>
             </div>
         </section>

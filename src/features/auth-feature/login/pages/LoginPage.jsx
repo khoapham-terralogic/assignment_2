@@ -3,16 +3,33 @@ import { eyeSvg, emailSvg, keySvg, eyeSvgShow } from '../../../../constants'
 import { MyNavLink } from '../../../../components'
 import FormGroup from '../components/FormGroup';
 
-const LoginPage = (props) => {
+
+const LoginPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isShow, setIsShow] = useState(false)
-    const handleEmailChange = (e) => { setEmail(e.target.value) }
-    const handlePasswordChange = (e) => { setPassword(e.target.value) }
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
+    }
     const handleOnSubmit = e => {
         e.preventDefault()
         console.log({ email, password })
     }
+
+
+
+    // useEffect(() => {
+    //     console.log(emailRef, passwordRef);
+    //     if (emailRef.current.focus()) {
+
+    //     }
+    //     if (passwordRef.current.focus()) {
+
+    //     }
+    // }, [email, password])
     const handleShow = () => { setIsShow(!isShow) }
     return (
         <div className="login">
@@ -26,7 +43,8 @@ const LoginPage = (props) => {
                     labelName="email"
                     placeholder="Enter your email"
                     value={email}
-                    onChange={handleEmailChange} />
+                    onChange={handleEmailChange}
+                />
                 <FormGroup
                     id="password"
                     isShow={isShow}
@@ -38,7 +56,8 @@ const LoginPage = (props) => {
                     labelName="password"
                     placeholder="Enter your password"
                     value={password}
-                    onChange={handlePasswordChange} />
+                    onChange={handlePasswordChange}
+                />
                 <div className="form-group login-body-btn-group">
                     <MyNavLink toPath="/auth/register" lable="Register" />
                     <button className="btn nav-link nav-link-btn">Login</button>

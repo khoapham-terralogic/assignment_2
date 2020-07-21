@@ -31,6 +31,20 @@
       .conPassword-group,
       .fullName-group,
       .phoneNumber-group {
+        .email-group--valid,
+        .password-group--valid,
+        .conPassword-group--valid,
+        .fullName-group--valid,
+        .phoneNumber-group--valid {
+          box-shadow: 0 0 7px 1px $pink;
+        }
+        .email-group--invalid,
+        .password-group--invalid,
+        .conPassword-group--invalid,
+        .fullName-group--invalid,
+        .phoneNumber-group--invalid {
+          box-shadow: 0 0 7px 1px #121212;
+        }
         .form-control {
           overflow: hidden;
           padding: 0.9rem 4rem;
@@ -71,7 +85,10 @@
         border-radius: 22rem;
         font-weight: 700;
         text-align: center;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .nav-link-custom {
         color: $pink;
@@ -107,8 +124,10 @@
     > .login-header {
       font-size: 2.4rem;
     }
-    >,
-    .form-group {
+    > .form-group {
+      font-size: 1.4rem;
+    }
+    > .nav-link {
       font-size: 1.4rem;
     }
   }

@@ -5,11 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .auth-container {
-    .auth-container-left {
+  .auth__container {
+    .auth__container__left {
       width: 100%;
     }
-    .auth-container-right {
+    .auth__container__right {
       display: none;
     }
   }
@@ -17,18 +17,18 @@
 
 @media screen and (min-width: 900px) {
   .auth {
-    .auth-container {
+    .auth__container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      .auth-container-left {
+      .auth__container__left {
         width: 55%;
         margin-left: 9.8rem;
       }
-      .auth-container-right {
+      .auth__container__right {
         display: flex;
         justify-content: center;
         align-items: center;
-        .auth-container-right-img {
+        .auth__container__right-img {
           width: 80%;
           // height: 100%;
         }

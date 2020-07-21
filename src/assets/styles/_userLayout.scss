@@ -1,50 +1,50 @@
-.user-container {
+.user__container {
   width: 100%;
   height: 100vh;
   font-family: $font;
-  .user-container-header {
+  .user__container__header {
     width: 100%;
     height: 16vh;
     background-color: $purple;
     color: #fff;
     display: flex;
     margin: 0;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 0 0 4px 4px;
     padding: 1.2rem 2.9rem;
-    .user-container-header-wrapper {
-      .user-container-header-title {
+    .user__container__header__wrapper {
+      .user__container__header__title {
         font-size: 2.3rem;
         font-weight: 700;
         line-height: 1.3;
       }
-      .user-container-header-description {
+      .user__container__header__description {
         font-size: 1.2rem;
         opacity: 0.8;
       }
     }
   }
-  .user-container-body {
+  .user__container-body {
     padding: 1.1rem 2.9rem;
-    .user-container-body-main-line {
+    .user__container-body-main-line {
       width: 100%;
       height: 1px;
       background-color: rgb(204, 204, 204);
     }
     .row {
       padding: 1.1rem 0;
-      .user-container-body-header {
+      .user__container-body-header {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        .user-container-body-header-img {
+        .user__container-body-header-img {
           width: 60px;
           height: 60px;
           border-radius: 50%;
         }
-        .user-container-body-header-name {
+        .user__container-body-header-name {
           color: $purple;
           font-size: 2.4rem;
           font-weight: 700;
@@ -52,12 +52,12 @@
           letter-spacing: 0.2px;
         }
       }
-      .user-container-body-main-description {
+      .user__container-body-main-description {
         font-size: 1.2rem;
         font-weight: 700;
         color: #bfc2d3;
       }
-      .user-container-body-main {
+      .user__container-body-main {
         .form-group {
           position: relative;
           width: 100%;
@@ -128,22 +128,22 @@
 }
 
 @media screen and (min-width: 900px) {
-  .user-container {
-    > .user-container-header {
+  .user__container {
+    > .user__container__header {
       padding: 1.2rem 13.2rem;
-      .user-container-header-wrapper {
-        .user-container-header-title {
+      .user__container__header__wrapper {
+        .user__container__header__title {
           font-size: 3rem;
         }
-        .user-container-header-description {
+        .user__container__header__description {
           font-size: 1.8rem;
         }
       }
     }
-    > .user-container-body {
+    > .user__container-body {
       padding: 1.2rem 13.2rem;
     }
-    > .user-container-body-header-name {
+    > .user__container-body-header-name {
       font-size: 3;
     }
     > .form-group {
