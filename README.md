@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [x] Initialize app with create-react-app
 - [x] Done
-- [] Implement logic
+- [ ] Implement logic
 
 ### Project structure
 
