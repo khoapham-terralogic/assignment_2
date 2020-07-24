@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import validate from '../../../../helpers/validate';
 
-const FormGroup = ({ type, label, labelName, handleShow, value, placeholder, onChange, frontSvg, rearSvg }) => {
+const FormGroup = ({ type, label, labelName, handleShow, value, placeholder, onChange, frontSvg, rearSvg, rearSvgShow }) => {
     const [isValid, setIsValid] = useState(null)
     const [error, setError] = useState(null)
+    const [isShow, setIsShow] = useState(false)
+    const clearErr = () => { setError(null) }
+    const handleIsShow = () => { setIsShow(!isShow) }
     const handleBlur = async (field, value) => {
+        clearErr()
         try {
             const res = await validate({
-                type: "register",
                 field, value
             })
             setIsValid(res.status)
         } catch (error) {
             setIsValid(false)
-            setError(error.errorMessage)
+            setError(error.message)
         }
     }
     return (
@@ -23,14 +26,15 @@ const FormGroup = ({ type, label, labelName, handleShow, value, placeholder, onC
             <div className={`${label}-group`}>
                 <img className="form-group-frontSvg" src={frontSvg} alt="" />
                 <input
-                    type={type}
+                    type={!isShow ? type : "text"}
                     className={isValid ? `form-control ${label}-group ${label}-group--valid` : `form-control ${label}-group ${label}-group--invalid`}
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
                     onBlur={() => handleBlur(label, value)}
                 />
-                <img className="form-group-rearSvg" onClick={handleShow} src={rearSvg} alt="" />
+                <img className="form-group-rearSvg" onClick={handleIsShow} src={!isShow ? rearSvg : rearSvgShow} alt="" />
+                {error && <div className="errorMessage">{error}</div>}
             </div>
         </div>
     );
@@ -42,7 +46,7 @@ FormGroup.propTypes = {
     value: PropTypes.any,
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     frontSvg: PropTypes.any,
     rearSvg: PropTypes.any,
     label: PropTypes.string.isRequired,

@@ -36,15 +36,15 @@
         .conPassword-group--valid,
         .fullName-group--valid,
         .phoneNumber-group--valid {
-          box-shadow: 0 0 7px 1px $pink;
+          box-shadow: 0 0 7px 1px rgb(214, 156, 248);
         }
-        .email-group--invalid,
-        .password-group--invalid,
-        .conPassword-group--invalid,
-        .fullName-group--invalid,
-        .phoneNumber-group--invalid {
-          box-shadow: 0 0 7px 1px #121212;
-        }
+        // .email-group--invalid,
+        // .password-group--invalid,
+        // .conPassword-group--invalid,
+        // .fullName-group--invalid,
+        // .phoneNumber-group--invalid {
+        //   // box-shadow: 0 0 7px 1px #acacac;
+        // }
         .form-control {
           overflow: hidden;
           padding: 0.9rem 4rem;
@@ -71,6 +71,14 @@
           &:hover {
             cursor: pointer;
           }
+        }
+        .errorMessage {
+          position: absolute;
+          color: $pink;
+          bottom: -40%;
+          left: 10%;
+          font-weight: 400;
+          font-size: 1rem;
         }
       }
     }

@@ -40,11 +40,10 @@ const RegisterPage = () => {
                     onChange={handleEmailChange} />
                 <FormGroup
                     id="password"
-                    isShow={isShow}
-                    type={isShow ? "text" : "password"}
-                    handleShow={handleShow}
                     frontSvg={keySvg}
-                    rearSvg={isShow ? eyeSvgShow : eyeSvg}
+                    type="password"
+                    rearSvgShow={eyeSvgShow}
+                    rearSvg={eyeSvg}
                     label="password"
                     labelName="password"
                     placeholder="Enter your password"
@@ -52,11 +51,10 @@ const RegisterPage = () => {
                     onChange={handlePasswordChange} />
                 <FormGroup
                     id="conPassword"
-                    isShow={isShow}
-                    type={isShow ? "text" : "password"}
-                    handleShow={handleShow}
                     frontSvg={keySvg}
-                    rearSvg={isShow ? eyeSvgShow : eyeSvg}
+                    type="password"
+                    rearSvgShow={eyeSvgShow}
+                    rearSvg={eyeSvg}
                     label="conPassword"
                     labelName="Confirm password"
                     placeholder="Enter your password"

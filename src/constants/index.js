@@ -1,4 +1,5 @@
 import logo from '../assets/images/brand-logo.svg'
+import editSvg from '../assets/images/edit_photo.svg'
 import rightImage from '../assets/images/solution-experts.png'
 import emailSvg from '../assets/images/Suche.svg'
 import keySvg from '../assets/images/Suche02.svg'
@@ -10,5 +11,6 @@ export {
     emailSvg,
     keySvg,
     eyeSvg,
-    eyeSvgShow
+    eyeSvgShow,
+    editSvg
 }

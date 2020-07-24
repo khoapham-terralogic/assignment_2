@@ -115,10 +115,36 @@
           align-items: center;
 }
 
-.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img {
+.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container {
+  position: relative;
+}
+
+.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container .user__container-body-header-img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  z-index: 1;
+}
+
+.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container .user__container-body-header-subimg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(40%, -40%);
+          transform: translate(40%, -40%);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container .user__container-body-header-subimg:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 4px #aaa;
+          box-shadow: 0 2px 4px #aaa;
+  -webkit-transform: perspective(1000px) translate(40%, -50%);
+          transform: perspective(1000px) translate(40%, -50%);
 }
 
 .user__container .user__container-body .row .user__container-body-header .user__container-body-header-name {
@@ -158,16 +184,19 @@
 
 .user__container .user__container-body .row .user__container-body-main .form-group .form-control__floating-label {
   position: absolute;
-  top: 0%;
-  left: 2%;
+  top: 50%;
   padding: 0 0.6rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  left: 3%;
   text-align: center;
+  background-color: #fff;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  background-color: #fff;
   color: #212020;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0.5;
 }
 
 .user__container .user__container-body .row .user__container-body-main .form-group .form-group-rearSvg {
@@ -180,6 +209,13 @@
 
 .user__container .user__container-body .row .user__container-body-main .form-group .form-group-rearSvg:hover {
   cursor: pointer;
+}
+
+.user__container .user__container-body .row .user__container-body-main .form-group--active .form-control__floating-label {
+  top: 0%;
+  left: 1%;
+  font-size: 1.1rem;
+  opacity: 1;
 }
 
 .user__container .user__container-body .row .login-body-btn-group {
@@ -320,37 +356,8 @@
 .login .login-body .form-group .phoneNumber-group .conPassword-group--valid,
 .login .login-body .form-group .phoneNumber-group .fullName-group--valid,
 .login .login-body .form-group .phoneNumber-group .phoneNumber-group--valid {
-  -webkit-box-shadow: 0 0 7px 1px #bd10e0;
-          box-shadow: 0 0 7px 1px #bd10e0;
-}
-
-.login .login-body .form-group .email-group .email-group--invalid,
-.login .login-body .form-group .email-group .password-group--invalid,
-.login .login-body .form-group .email-group .conPassword-group--invalid,
-.login .login-body .form-group .email-group .fullName-group--invalid,
-.login .login-body .form-group .email-group .phoneNumber-group--invalid,
-.login .login-body .form-group .password-group .email-group--invalid,
-.login .login-body .form-group .password-group .password-group--invalid,
-.login .login-body .form-group .password-group .conPassword-group--invalid,
-.login .login-body .form-group .password-group .fullName-group--invalid,
-.login .login-body .form-group .password-group .phoneNumber-group--invalid,
-.login .login-body .form-group .conPassword-group .email-group--invalid,
-.login .login-body .form-group .conPassword-group .password-group--invalid,
-.login .login-body .form-group .conPassword-group .conPassword-group--invalid,
-.login .login-body .form-group .conPassword-group .fullName-group--invalid,
-.login .login-body .form-group .conPassword-group .phoneNumber-group--invalid,
-.login .login-body .form-group .fullName-group .email-group--invalid,
-.login .login-body .form-group .fullName-group .password-group--invalid,
-.login .login-body .form-group .fullName-group .conPassword-group--invalid,
-.login .login-body .form-group .fullName-group .fullName-group--invalid,
-.login .login-body .form-group .fullName-group .phoneNumber-group--invalid,
-.login .login-body .form-group .phoneNumber-group .email-group--invalid,
-.login .login-body .form-group .phoneNumber-group .password-group--invalid,
-.login .login-body .form-group .phoneNumber-group .conPassword-group--invalid,
-.login .login-body .form-group .phoneNumber-group .fullName-group--invalid,
-.login .login-body .form-group .phoneNumber-group .phoneNumber-group--invalid {
-  -webkit-box-shadow: 0 0 7px 1px #121212;
-          box-shadow: 0 0 7px 1px #121212;
+  -webkit-box-shadow: 0 0 7px 1px #d69cf8;
+          box-shadow: 0 0 7px 1px #d69cf8;
 }
 
 .login .login-body .form-group .email-group .form-control,
@@ -428,6 +435,19 @@
 .login .login-body .form-group .fullName-group .form-group-rearSvg:hover,
 .login .login-body .form-group .phoneNumber-group .form-group-rearSvg:hover {
   cursor: pointer;
+}
+
+.login .login-body .form-group .email-group .errorMessage,
+.login .login-body .form-group .password-group .errorMessage,
+.login .login-body .form-group .conPassword-group .errorMessage,
+.login .login-body .form-group .fullName-group .errorMessage,
+.login .login-body .form-group .phoneNumber-group .errorMessage {
+  position: absolute;
+  color: #bd10e0;
+  bottom: -40%;
+  left: 10%;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .login .login-body .login-body-btn-group {
