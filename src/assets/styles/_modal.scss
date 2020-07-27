@@ -1,0 +1,69 @@
+@mixin center($direction: "row", $justify: "center", $align: "center") {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.custom-modal {
+  font-family: $font;
+  &__header {
+    &__title {
+      width: 100%;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+  &__body {
+    padding: 1.5rem 2rem;
+    min-height: 22rem;
+    @include center(column, center, center);
+    form {
+      @include center(column, center, center);
+      .dropzone {
+        outline: none;
+        max-height: 22rem;
+        padding: 3rem 2rem;
+        @include center();
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .dropzone--active {
+        border: 1px solid #000;
+        box-shadow: 0 0 8px 1px $purple;
+      }
+      .dropzone--inactive {
+        border: 1px dashed #000;
+        &__p {
+          animation: float infinite 2.6s;
+        }
+      }
+      .btn {
+        margin-top: 1rem;
+        padding: 0.8rem 4rem;
+        font-size: 1.8rem;
+        background: $pink;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        border-radius: 22rem;
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: scale(0.9);
+    color: #aaa;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #000;
+  }
+  100% {
+    transform: scale(0.9);
+    color: #aaa;
+  }
+}

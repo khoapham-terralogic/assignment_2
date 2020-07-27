@@ -1,9 +1,12 @@
 import React, { Suspense, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import { css } from "@emotion/core";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { ClipSpinner, ProtectedRoute } from './components'
 import { loadUser } from './redux/actions/authAction'
+import { clearError } from './redux/actions/errorAction'
+import 'react-toastify/dist/ReactToastify.css';
 //LAZY LOAD
 const AuthLayout = React.lazy(() => import('./layouts/AuthLayout'))
 const UserLayout = React.lazy(() => import('./layouts/UserLayout'))
@@ -21,21 +24,35 @@ const override = css`
 
 const App = ({
   isAuth,
-  loadUser
+  loadUser,
+  error,
+  clearError
 }) => {
   useEffect((
   ) => {
     loadUser()
-  }, [loadUser, isAuth])
+    clearError()
+  }, [loadUser, isAuth, error, clearError])
   return (
     <Router>
-      <Suspense fallback={<ClipSpinner size={50} css={override} />}>
+      <Suspense fallback={<ClipSpinner color="#000" size={50} css={override} />}>
         <Switch>
           <Redirect from='/' exact to='/auth' />
           <Route path='/auth' render={() => <AuthLayout />} />
-          <Route path='/user' exact render={() => <UserLayout />} />
+          {/* <Route path='/user' exact render={() => <UserLayout />} /> */}
           <ProtectedRoute path='/user' exact component={UserLayout} isAuth={isAuth} />
         </Switch>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover={false}
+        />
       </Suspense>
     </Router>
   );
@@ -44,5 +61,5 @@ const App = ({
 
 export default connect(
   state => ({ isAuth: state.auth.isAuth }),
-  { loadUser }
+  { loadUser, clearError }
 )(App);

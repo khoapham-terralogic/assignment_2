@@ -5,8 +5,6 @@ const axiosClient = axios.create({
     baseURL: 'http://api.terralogic.ngrok.io',
     headers: {
         'Content-Type': 'application/json',
-        // 'Accept-Encoding': 'gzip, deflate, br',
-        // 'Connection': 'keep-alive'
     },
     paramsSerializer: params => queryString.stringify(params),
 })

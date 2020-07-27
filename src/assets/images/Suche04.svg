@@ -16,13 +16,19 @@
       id="path-1"
     ></path>
   </defs>
-  <g id="Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+  <g
+    id="Login"
+    stroke="#bd10e0"
+    stroke-width="1.5"
+    fill="none"
+    fill-rule="evenodd"
+  >
     <g transform="translate(-504.000000, -488.000000)" id="Suche">
       <g transform="translate(504.000000, 488.000000)">
         <mask id="mask-2" fill="white">
           <use xlink:href="#path-1"></use>
         </mask>
-        <use id="Eye" fill="#bd10e0" xlink:href="#path-1"></use>
+        <use id="Eye" fill="#fff" xlink:href="#path-1"></use>
       </g>
     </g>
   </g>

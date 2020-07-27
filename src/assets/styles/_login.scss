@@ -1,6 +1,19 @@
 .login {
   font-family: $font;
   color: $black;
+  .loadingBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.623);
+  }
   .login-header {
     font-weight: 700;
     font-size: 2rem;
@@ -9,79 +22,84 @@
   }
   .login-body {
     width: 100%;
-    .form-group {
-      font-size: 1rem;
-      margin: 1.1rem 0;
-      .login-body-checkbox {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 1rem;
-      }
-      label {
-        text-transform: capitalize;
-        font-size: 1.2rem;
-        color: $grey;
-        font-weight: 700;
-        margin-left: 1rem;
-      }
-      .email-group,
-      .password-group,
-      .conPassword-group,
-      .fullName-group,
-      .phoneNumber-group {
-        .email-group--valid,
-        .password-group--valid,
-        .conPassword-group--valid,
-        .fullName-group--valid,
-        .phoneNumber-group--valid {
-          box-shadow: 0 0 7px 1px rgb(214, 156, 248);
+
+    .form-container {
+      position: relative;
+      .form-group {
+        font-size: 1rem;
+        margin: 1.3rem 0;
+        .login-body-checkbox {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 1rem;
         }
-        // .email-group--invalid,
-        // .password-group--invalid,
-        // .conPassword-group--invalid,
-        // .fullName-group--invalid,
-        // .phoneNumber-group--invalid {
-        //   // box-shadow: 0 0 7px 1px #acacac;
-        // }
-        .form-control {
-          overflow: hidden;
-          padding: 0.9rem 4rem;
-          border-radius: 22px;
+        label {
+          text-transform: capitalize;
+          font-size: 1.2rem;
+          color: $grey;
           font-weight: 700;
-          &::placeholder {
-            font-weight: 400;
+          margin-left: 1rem;
+        }
+        .email-group,
+        .password-group,
+        .conPassword-group,
+        .fullName-group,
+        .phoneNumber-group {
+          .email-group--valid,
+          .password-group--valid,
+          .conPassword-group--valid,
+          .fullName-group--valid,
+          .phoneNumber-group--valid {
+            box-shadow: 0 0 7px 1px rgb(214, 156, 248);
+          }
+          // .email-group--invalid,
+          // .password-group--invalid,
+          // .conPassword-group--invalid,
+          // .fullName-group--invalid,
+          // .phoneNumber-group--invalid {
+          //   // box-shadow: 0 0 7px 1px #acacac;
+          // }
+          .form-control {
+            overflow: hidden;
+            padding: 0.9rem 4rem;
+            border-radius: 22px;
+            font-weight: 700;
+            &::placeholder {
+              font-weight: 400;
+            }
+          }
+          position: relative;
+          .form-group-frontSvg {
+            position: absolute;
+            top: 50%;
+            left: 3%;
+            transform: translateY(-50%);
+            z-index: 1;
+          }
+          .form-group-rearSvg {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            right: 4%;
+            transform: translateY(-50%);
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
-        position: relative;
-        .form-group-frontSvg {
-          position: absolute;
-          top: 50%;
-          left: 3%;
-          transform: translateY(-50%);
-          z-index: 1;
-        }
-        .form-group-rearSvg {
-          z-index: 1;
-          position: absolute;
-          top: 50%;
-          right: 4%;
-          transform: translateY(-50%);
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        .errorMessage {
-          position: absolute;
-          color: $pink;
-          bottom: -40%;
-          left: 10%;
-          font-weight: 400;
-          font-size: 1rem;
-        }
+      }
+      & > .errorMessage {
+        position: absolute;
+        color: $text-color;
+        bottom: -42%;
+        left: 10%;
+        font-weight: 500;
+        font-size: 1rem;
       }
     }
+
     .login-body-btn-group {
       display: flex;
       flex-direction: row;

@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   font-family: $font;
-  .user__container__header {
+  &__header {
     width: 100%;
     height: 16vh;
     background-color: $purple;
@@ -13,7 +13,7 @@
     align-items: center;
     border-radius: 0 0 4px 4px;
     padding: 1.2rem 2.9rem;
-    .user__container__header__wrapper {
+    &__wrapper {
       .user__container__header__title {
         font-size: 2.3rem;
         font-weight: 700;
@@ -25,29 +25,29 @@
       }
     }
   }
-  .user__container-body {
+  &__body {
     padding: 1.1rem 2.9rem;
-    .user__container-body-main-line {
+    .user__container__body-main-line {
       width: 100%;
       height: 1px;
       background-color: rgb(204, 204, 204);
     }
     .row {
       padding: 1.1rem 0;
-      .user__container-body-header {
+      .user__container__body__header {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        .user__container-body-header-img-container {
+        .user__container__body__header-img-container {
           position: relative;
-          .user__container-body-header-img {
+          .user__container__body__header-img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             z-index: 1;
           }
-          .user__container-body-header-subimg {
+          .user__container__body__header-subimg {
             position: absolute;
             width: 30px;
             height: 30px;
@@ -64,7 +64,7 @@
           }
         }
 
-        .user__container-body-header-name {
+        .user__container__body__header-name {
           color: $purple;
           font-size: 2.4rem;
           font-weight: 700;
@@ -72,15 +72,24 @@
           letter-spacing: 0.2px;
         }
       }
-      .user__container-body-main-description {
+      .user__container__body-main-description {
         font-size: 1.2rem;
         font-weight: 700;
         color: #bfc2d3;
       }
-      .user__container-body-main {
+      .user__container__body-main {
+        position: relative;
+        &__errorMessage {
+          position: absolute;
+          left: 10%;
+          bottom: -5%;
+          color: $pink;
+          font-size: 1rem;
+        }
         .form-group {
           position: relative;
           width: 100%;
+          padding: 1.6rem 0;
           .form-control {
             color: #212020;
             font-weight: 700;
@@ -102,10 +111,10 @@
             top: 50%;
             padding: 0 0.6rem;
             font-size: 1.3rem;
-            font-weight: 700;
+            font-weight: 500;
             left: 3%;
             text-align: center;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.26);
             transform: translate(0, -50%);
             color: #212020;
             transition: all 0.4s;
@@ -125,7 +134,8 @@
           .form-control__floating-label {
             top: 0%;
             left: 1%;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
+            background-color: #fff;
             opacity: 1;
           }
         }
@@ -170,15 +180,26 @@
         }
       }
     }
-    > .user__container-body {
+    > .user__container__body {
       padding: 1.2rem 13.2rem;
+      & .user__container__body-main__errorMessage {
+        position: absolute;
+        left: 5%;
+        bottom: -40%;
+        color: $pink;
+        font-size: 1.6rem;
+      }
+      .user__container__body-main {
+        .form-group {
+          width: 95%;
+          padding: 0.5rem 0;
+        }
+      }
     }
-    > .user__container-body-header-name {
+    > .user__container__body__header-name {
       font-size: 3;
     }
-    > .form-group {
-      width: 95%;
-    }
+
     > .nav-link {
       font-size: 1.6rem;
     }

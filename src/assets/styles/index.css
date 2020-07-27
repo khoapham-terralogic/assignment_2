@@ -55,7 +55,7 @@
   font-family: "Raleway", sans-serif;
 }
 
-.user__container .user__container__header {
+.user__container__header {
   width: 100%;
   height: 16vh;
   background-color: #4d0c5a;
@@ -74,32 +74,32 @@
   padding: 1.2rem 2.9rem;
 }
 
-.user__container .user__container__header .user__container__header__wrapper .user__container__header__title {
+.user__container__header__wrapper .user__container__header__title {
   font-size: 2.3rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.user__container .user__container__header .user__container__header__wrapper .user__container__header__description {
+.user__container__header__wrapper .user__container__header__description {
   font-size: 1.2rem;
   opacity: 0.8;
 }
 
-.user__container .user__container-body {
+.user__container__body {
   padding: 1.1rem 2.9rem;
 }
 
-.user__container .user__container-body .user__container-body-main-line {
+.user__container__body .user__container__body-main-line {
   width: 100%;
   height: 1px;
   background-color: #cccccc;
 }
 
-.user__container .user__container-body .row {
+.user__container__body .row {
   padding: 1.1rem 0;
 }
 
-.user__container .user__container-body .row .user__container-body-header {
+.user__container__body .row .user__container__body__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,18 +115,18 @@
           align-items: center;
 }
 
-.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container {
+.user__container__body .row .user__container__body__header .user__container__body__header-img-container {
   position: relative;
 }
 
-.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container .user__container-body-header-img {
+.user__container__body .row .user__container__body__header .user__container__body__header-img-container .user__container__body__header-img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   z-index: 1;
 }
 
-.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container .user__container-body-header-subimg {
+.user__container__body .row .user__container__body__header .user__container__body__header-img-container .user__container__body__header-subimg {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -139,7 +139,7 @@
   transition: all 0.35s;
 }
 
-.user__container .user__container-body .row .user__container-body-header .user__container-body-header-img-container .user__container-body-header-subimg:hover {
+.user__container__body .row .user__container__body__header .user__container__body__header-img-container .user__container__body__header-subimg:hover {
   cursor: pointer;
   -webkit-box-shadow: 0 2px 4px #aaa;
           box-shadow: 0 2px 4px #aaa;
@@ -147,7 +147,7 @@
           transform: perspective(1000px) translate(40%, -50%);
 }
 
-.user__container .user__container-body .row .user__container-body-header .user__container-body-header-name {
+.user__container__body .row .user__container__body__header .user__container__body__header-name {
   color: #4d0c5a;
   font-size: 2.4rem;
   font-weight: 700;
@@ -155,18 +155,31 @@
   letter-spacing: 0.2px;
 }
 
-.user__container .user__container-body .row .user__container-body-main-description {
+.user__container__body .row .user__container__body-main-description {
   font-size: 1.2rem;
   font-weight: 700;
   color: #bfc2d3;
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group {
+.user__container__body .row .user__container__body-main {
   position: relative;
-  width: 100%;
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group .form-control {
+.user__container__body .row .user__container__body-main__errorMessage {
+  position: absolute;
+  left: 10%;
+  bottom: -5%;
+  color: #bd10e0;
+  font-size: 1rem;
+}
+
+.user__container__body .row .user__container__body-main .form-group {
+  position: relative;
+  width: 100%;
+  padding: 1.6rem 0;
+}
+
+.user__container__body .row .user__container__body-main .form-group .form-control {
   color: #212020;
   font-weight: 700;
   font-size: 1.1rem;
@@ -176,21 +189,21 @@
   border: solid 1px rgba(33, 32, 32, 0.541);
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group .form-control:focus {
+.user__container__body .row .user__container__body-main .form-group .form-control:focus {
   outline: none;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group .form-control__floating-label {
+.user__container__body .row .user__container__body-main .form-group .form-control__floating-label {
   position: absolute;
   top: 50%;
   padding: 0 0.6rem;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 500;
   left: 3%;
   text-align: center;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.26);
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   color: #212020;
@@ -199,7 +212,7 @@
   opacity: 0.5;
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group .form-group-rearSvg {
+.user__container__body .row .user__container__body-main .form-group .form-group-rearSvg {
   position: absolute;
   top: 50%;
   right: 4%;
@@ -207,18 +220,19 @@
           transform: translateY(-50%);
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group .form-group-rearSvg:hover {
+.user__container__body .row .user__container__body-main .form-group .form-group-rearSvg:hover {
   cursor: pointer;
 }
 
-.user__container .user__container-body .row .user__container-body-main .form-group--active .form-control__floating-label {
+.user__container__body .row .user__container__body-main .form-group--active .form-control__floating-label {
   top: 0%;
   left: 1%;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  background-color: #fff;
   opacity: 1;
 }
 
-.user__container .user__container-body .row .login-body-btn-group {
+.user__container__body .row .login-body-btn-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,7 +246,7 @@
   margin: 0;
 }
 
-.user__container .user__container-body .row .login-body-btn-group .nav-link {
+.user__container__body .row .login-body-btn-group .nav-link {
   padding: 0.8rem 2.6rem;
   font-size: 1.4rem;
   font-weight: 700;
@@ -240,16 +254,16 @@
   text-align: center;
 }
 
-.user__container .user__container-body .row .login-body-btn-group .nav-link:nth-child(2) {
+.user__container__body .row .login-body-btn-group .nav-link:nth-child(2) {
   margin: 0 3rem;
 }
 
-.user__container .user__container-body .row .login-body-btn-group .nav-link-btn {
+.user__container__body .row .login-body-btn-group .nav-link-btn {
   color: #fff;
   background-color: #bd10e0;
 }
 
-.user__container .user__container-body .row .login-body-btn-group .nav-link-custom {
+.user__container__body .row .login-body-btn-group .nav-link-custom {
   border: 1.8px solid #bd10e0;
 }
 
@@ -263,14 +277,22 @@
   .user__container > .user__container__header .user__container__header__wrapper .user__container__header__description {
     font-size: 1.8rem;
   }
-  .user__container > .user__container-body {
+  .user__container > .user__container__body {
     padding: 1.2rem 13.2rem;
   }
-  .user__container > .user__container-body-header-name {
-    font-size: 3;
+  .user__container > .user__container__body .user__container__body-main__errorMessage {
+    position: absolute;
+    left: 5%;
+    bottom: -40%;
+    color: #bd10e0;
+    font-size: 1.6rem;
   }
-  .user__container > .form-group {
+  .user__container > .user__container__body .user__container__body-main .form-group {
     width: 95%;
+    padding: 0.5rem 0;
+  }
+  .user__container > .user__container__body__header-name {
+    font-size: 3;
   }
   .user__container > .nav-link {
     font-size: 1.6rem;
@@ -280,6 +302,27 @@
 .login {
   font-family: "Raleway", sans-serif;
   color: #000;
+}
+
+.login .loadingBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10000;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.623);
 }
 
 .login .login-header {
@@ -293,12 +336,16 @@
   width: 100%;
 }
 
-.login .login-body .form-group {
-  font-size: 1rem;
-  margin: 1.1rem 0;
+.login .login-body .form-container {
+  position: relative;
 }
 
-.login .login-body .form-group .login-body-checkbox {
+.login .login-body .form-container .form-group {
+  font-size: 1rem;
+  margin: 1.3rem 0;
+}
+
+.login .login-body .form-container .form-group .login-body-checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -315,7 +362,7 @@
   padding-left: 1rem;
 }
 
-.login .login-body .form-group label {
+.login .login-body .form-container .form-group label {
   text-transform: capitalize;
   font-size: 1.2rem;
   color: #6b6c6f;
@@ -323,91 +370,91 @@
   margin-left: 1rem;
 }
 
-.login .login-body .form-group .email-group,
-.login .login-body .form-group .password-group,
-.login .login-body .form-group .conPassword-group,
-.login .login-body .form-group .fullName-group,
-.login .login-body .form-group .phoneNumber-group {
+.login .login-body .form-container .form-group .email-group,
+.login .login-body .form-container .form-group .password-group,
+.login .login-body .form-container .form-group .conPassword-group,
+.login .login-body .form-container .form-group .fullName-group,
+.login .login-body .form-container .form-group .phoneNumber-group {
   position: relative;
 }
 
-.login .login-body .form-group .email-group .email-group--valid,
-.login .login-body .form-group .email-group .password-group--valid,
-.login .login-body .form-group .email-group .conPassword-group--valid,
-.login .login-body .form-group .email-group .fullName-group--valid,
-.login .login-body .form-group .email-group .phoneNumber-group--valid,
-.login .login-body .form-group .password-group .email-group--valid,
-.login .login-body .form-group .password-group .password-group--valid,
-.login .login-body .form-group .password-group .conPassword-group--valid,
-.login .login-body .form-group .password-group .fullName-group--valid,
-.login .login-body .form-group .password-group .phoneNumber-group--valid,
-.login .login-body .form-group .conPassword-group .email-group--valid,
-.login .login-body .form-group .conPassword-group .password-group--valid,
-.login .login-body .form-group .conPassword-group .conPassword-group--valid,
-.login .login-body .form-group .conPassword-group .fullName-group--valid,
-.login .login-body .form-group .conPassword-group .phoneNumber-group--valid,
-.login .login-body .form-group .fullName-group .email-group--valid,
-.login .login-body .form-group .fullName-group .password-group--valid,
-.login .login-body .form-group .fullName-group .conPassword-group--valid,
-.login .login-body .form-group .fullName-group .fullName-group--valid,
-.login .login-body .form-group .fullName-group .phoneNumber-group--valid,
-.login .login-body .form-group .phoneNumber-group .email-group--valid,
-.login .login-body .form-group .phoneNumber-group .password-group--valid,
-.login .login-body .form-group .phoneNumber-group .conPassword-group--valid,
-.login .login-body .form-group .phoneNumber-group .fullName-group--valid,
-.login .login-body .form-group .phoneNumber-group .phoneNumber-group--valid {
+.login .login-body .form-container .form-group .email-group .email-group--valid,
+.login .login-body .form-container .form-group .email-group .password-group--valid,
+.login .login-body .form-container .form-group .email-group .conPassword-group--valid,
+.login .login-body .form-container .form-group .email-group .fullName-group--valid,
+.login .login-body .form-container .form-group .email-group .phoneNumber-group--valid,
+.login .login-body .form-container .form-group .password-group .email-group--valid,
+.login .login-body .form-container .form-group .password-group .password-group--valid,
+.login .login-body .form-container .form-group .password-group .conPassword-group--valid,
+.login .login-body .form-container .form-group .password-group .fullName-group--valid,
+.login .login-body .form-container .form-group .password-group .phoneNumber-group--valid,
+.login .login-body .form-container .form-group .conPassword-group .email-group--valid,
+.login .login-body .form-container .form-group .conPassword-group .password-group--valid,
+.login .login-body .form-container .form-group .conPassword-group .conPassword-group--valid,
+.login .login-body .form-container .form-group .conPassword-group .fullName-group--valid,
+.login .login-body .form-container .form-group .conPassword-group .phoneNumber-group--valid,
+.login .login-body .form-container .form-group .fullName-group .email-group--valid,
+.login .login-body .form-container .form-group .fullName-group .password-group--valid,
+.login .login-body .form-container .form-group .fullName-group .conPassword-group--valid,
+.login .login-body .form-container .form-group .fullName-group .fullName-group--valid,
+.login .login-body .form-container .form-group .fullName-group .phoneNumber-group--valid,
+.login .login-body .form-container .form-group .phoneNumber-group .email-group--valid,
+.login .login-body .form-container .form-group .phoneNumber-group .password-group--valid,
+.login .login-body .form-container .form-group .phoneNumber-group .conPassword-group--valid,
+.login .login-body .form-container .form-group .phoneNumber-group .fullName-group--valid,
+.login .login-body .form-container .form-group .phoneNumber-group .phoneNumber-group--valid {
   -webkit-box-shadow: 0 0 7px 1px #d69cf8;
           box-shadow: 0 0 7px 1px #d69cf8;
 }
 
-.login .login-body .form-group .email-group .form-control,
-.login .login-body .form-group .password-group .form-control,
-.login .login-body .form-group .conPassword-group .form-control,
-.login .login-body .form-group .fullName-group .form-control,
-.login .login-body .form-group .phoneNumber-group .form-control {
+.login .login-body .form-container .form-group .email-group .form-control,
+.login .login-body .form-container .form-group .password-group .form-control,
+.login .login-body .form-container .form-group .conPassword-group .form-control,
+.login .login-body .form-container .form-group .fullName-group .form-control,
+.login .login-body .form-container .form-group .phoneNumber-group .form-control {
   overflow: hidden;
   padding: 0.9rem 4rem;
   border-radius: 22px;
   font-weight: 700;
 }
 
-.login .login-body .form-group .email-group .form-control::-webkit-input-placeholder,
-.login .login-body .form-group .password-group .form-control::-webkit-input-placeholder,
-.login .login-body .form-group .conPassword-group .form-control::-webkit-input-placeholder,
-.login .login-body .form-group .fullName-group .form-control::-webkit-input-placeholder,
-.login .login-body .form-group .phoneNumber-group .form-control::-webkit-input-placeholder {
+.login .login-body .form-container .form-group .email-group .form-control::-webkit-input-placeholder,
+.login .login-body .form-container .form-group .password-group .form-control::-webkit-input-placeholder,
+.login .login-body .form-container .form-group .conPassword-group .form-control::-webkit-input-placeholder,
+.login .login-body .form-container .form-group .fullName-group .form-control::-webkit-input-placeholder,
+.login .login-body .form-container .form-group .phoneNumber-group .form-control::-webkit-input-placeholder {
   font-weight: 400;
 }
 
-.login .login-body .form-group .email-group .form-control:-ms-input-placeholder,
-.login .login-body .form-group .password-group .form-control:-ms-input-placeholder,
-.login .login-body .form-group .conPassword-group .form-control:-ms-input-placeholder,
-.login .login-body .form-group .fullName-group .form-control:-ms-input-placeholder,
-.login .login-body .form-group .phoneNumber-group .form-control:-ms-input-placeholder {
+.login .login-body .form-container .form-group .email-group .form-control:-ms-input-placeholder,
+.login .login-body .form-container .form-group .password-group .form-control:-ms-input-placeholder,
+.login .login-body .form-container .form-group .conPassword-group .form-control:-ms-input-placeholder,
+.login .login-body .form-container .form-group .fullName-group .form-control:-ms-input-placeholder,
+.login .login-body .form-container .form-group .phoneNumber-group .form-control:-ms-input-placeholder {
   font-weight: 400;
 }
 
-.login .login-body .form-group .email-group .form-control::-ms-input-placeholder,
-.login .login-body .form-group .password-group .form-control::-ms-input-placeholder,
-.login .login-body .form-group .conPassword-group .form-control::-ms-input-placeholder,
-.login .login-body .form-group .fullName-group .form-control::-ms-input-placeholder,
-.login .login-body .form-group .phoneNumber-group .form-control::-ms-input-placeholder {
+.login .login-body .form-container .form-group .email-group .form-control::-ms-input-placeholder,
+.login .login-body .form-container .form-group .password-group .form-control::-ms-input-placeholder,
+.login .login-body .form-container .form-group .conPassword-group .form-control::-ms-input-placeholder,
+.login .login-body .form-container .form-group .fullName-group .form-control::-ms-input-placeholder,
+.login .login-body .form-container .form-group .phoneNumber-group .form-control::-ms-input-placeholder {
   font-weight: 400;
 }
 
-.login .login-body .form-group .email-group .form-control::placeholder,
-.login .login-body .form-group .password-group .form-control::placeholder,
-.login .login-body .form-group .conPassword-group .form-control::placeholder,
-.login .login-body .form-group .fullName-group .form-control::placeholder,
-.login .login-body .form-group .phoneNumber-group .form-control::placeholder {
+.login .login-body .form-container .form-group .email-group .form-control::placeholder,
+.login .login-body .form-container .form-group .password-group .form-control::placeholder,
+.login .login-body .form-container .form-group .conPassword-group .form-control::placeholder,
+.login .login-body .form-container .form-group .fullName-group .form-control::placeholder,
+.login .login-body .form-container .form-group .phoneNumber-group .form-control::placeholder {
   font-weight: 400;
 }
 
-.login .login-body .form-group .email-group .form-group-frontSvg,
-.login .login-body .form-group .password-group .form-group-frontSvg,
-.login .login-body .form-group .conPassword-group .form-group-frontSvg,
-.login .login-body .form-group .fullName-group .form-group-frontSvg,
-.login .login-body .form-group .phoneNumber-group .form-group-frontSvg {
+.login .login-body .form-container .form-group .email-group .form-group-frontSvg,
+.login .login-body .form-container .form-group .password-group .form-group-frontSvg,
+.login .login-body .form-container .form-group .conPassword-group .form-group-frontSvg,
+.login .login-body .form-container .form-group .fullName-group .form-group-frontSvg,
+.login .login-body .form-container .form-group .phoneNumber-group .form-group-frontSvg {
   position: absolute;
   top: 50%;
   left: 3%;
@@ -416,11 +463,11 @@
   z-index: 1;
 }
 
-.login .login-body .form-group .email-group .form-group-rearSvg,
-.login .login-body .form-group .password-group .form-group-rearSvg,
-.login .login-body .form-group .conPassword-group .form-group-rearSvg,
-.login .login-body .form-group .fullName-group .form-group-rearSvg,
-.login .login-body .form-group .phoneNumber-group .form-group-rearSvg {
+.login .login-body .form-container .form-group .email-group .form-group-rearSvg,
+.login .login-body .form-container .form-group .password-group .form-group-rearSvg,
+.login .login-body .form-container .form-group .conPassword-group .form-group-rearSvg,
+.login .login-body .form-container .form-group .fullName-group .form-group-rearSvg,
+.login .login-body .form-container .form-group .phoneNumber-group .form-group-rearSvg {
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -429,24 +476,20 @@
           transform: translateY(-50%);
 }
 
-.login .login-body .form-group .email-group .form-group-rearSvg:hover,
-.login .login-body .form-group .password-group .form-group-rearSvg:hover,
-.login .login-body .form-group .conPassword-group .form-group-rearSvg:hover,
-.login .login-body .form-group .fullName-group .form-group-rearSvg:hover,
-.login .login-body .form-group .phoneNumber-group .form-group-rearSvg:hover {
+.login .login-body .form-container .form-group .email-group .form-group-rearSvg:hover,
+.login .login-body .form-container .form-group .password-group .form-group-rearSvg:hover,
+.login .login-body .form-container .form-group .conPassword-group .form-group-rearSvg:hover,
+.login .login-body .form-container .form-group .fullName-group .form-group-rearSvg:hover,
+.login .login-body .form-container .form-group .phoneNumber-group .form-group-rearSvg:hover {
   cursor: pointer;
 }
 
-.login .login-body .form-group .email-group .errorMessage,
-.login .login-body .form-group .password-group .errorMessage,
-.login .login-body .form-group .conPassword-group .errorMessage,
-.login .login-body .form-group .fullName-group .errorMessage,
-.login .login-body .form-group .phoneNumber-group .errorMessage {
+.login .login-body .form-container > .errorMessage {
   position: absolute;
-  color: #bd10e0;
-  bottom: -40%;
+  color: #313558;
+  bottom: -42%;
   left: 10%;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1rem;
 }
 
@@ -538,13 +581,150 @@
   }
 }
 
+.toast--show {
+  display: block;
+}
+
+.toast--hide {
+  display: none;
+}
+
+.custom-modal {
+  font-family: "Raleway", sans-serif;
+}
+
+.custom-modal__header__title {
+  width: 100%;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.custom-modal__body {
+  padding: 1.5rem 2rem;
+  min-height: 22rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-modal__body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-modal__body form .dropzone {
+  outline: none;
+  max-height: 22rem;
+  padding: 3rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: "row";
+          flex-direction: "row";
+  -webkit-box-pack: "center";
+      -ms-flex-pack: "center";
+          justify-content: "center";
+  -webkit-box-align: "center";
+      -ms-flex-align: "center";
+          align-items: "center";
+}
+
+.custom-modal__body form .dropzone:hover {
+  cursor: pointer;
+}
+
+.custom-modal__body form .dropzone--active {
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 0 8px 1px #4d0c5a;
+          box-shadow: 0 0 8px 1px #4d0c5a;
+}
+
+.custom-modal__body form .dropzone--inactive {
+  border: 1px dashed #000;
+}
+
+.custom-modal__body form .dropzone--inactive__p {
+  -webkit-animation: float infinite 2.6s;
+          animation: float infinite 2.6s;
+}
+
+.custom-modal__body form .btn {
+  margin-top: 1rem;
+  padding: 0.8rem 4rem;
+  font-size: 1.8rem;
+  background: #bd10e0;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 22rem;
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    color: #aaa;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: #000;
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    color: #aaa;
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    color: #aaa;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: #000;
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    color: #aaa;
+  }
+}
+
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 html {

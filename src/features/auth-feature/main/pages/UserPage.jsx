@@ -5,14 +5,22 @@ import { useHistory } from 'react-router-dom'
 import UserFormGroup from '../components/UserInput';
 import { MyNavLink } from '../../../../components';
 import { eyeSvg, eyeSvgShow, editSvg } from '../../../../constants'
+import { logoutUser } from '../../../../redux/actions/authAction';
+import { updateProfile } from '../../../../redux/actions/userAction'
+import CustomModal from '../../../uploadImage/CustomModal';
+import UserForm from '../components/UserForm';
 
 
 const UserPage = ({
     isAuth,
     isLoading,
-    user
+    user,
+    logoutUser,
+    updateProfile
 }) => {
     const history = useHistory()
+    const [isOpen, setIsOpen] = useState(false)
+    const toggle = () => { setIsOpen(!isOpen) }
     // const [email, setEmail] = useState("")
     const [newPassword, setNewPassword] = useState("")
     const [conPassword, setConPassword] = useState("")
@@ -29,108 +37,117 @@ const UserPage = ({
     const handleCurrPasswordChange = (e) => { setCurrPassword(e.target.value) }
     // const handleFullNameChange = (e) => { setFullName(e.target.value) }
     // const handlePhoneNumberChange = (e) => { setPhoneNumber(e.target.value) }
-    // useEffect(() => {
-    //     if (!isAuth) {
-    //         history.push("/auth/login")
-    //     }
-    // }, [history, isAuth])
+    useEffect(() => {
+        if (!isAuth) {
+            history.push("/auth/login")
+        }
+    }, [history, isAuth])
     if (user)
         return (
-            <form className="user__container-body">
-                <div className="row">
-                    <div className="col-xs-12 col-md-6 user__container-body-header">
-                        <div className="user__container-body-header-img-container">
-                            <img className="user__container-body-header-img" src={user.avatar} alt="avatar" />
-                            <img onClick={() => alert("open modal")} className="user__container-body-header-subimg" src={editSvg} alt="edit" />
+            <div className="user__container__body">
+                {user &&
+                    <>
+                        <CustomModal isOpen={isOpen} toggle={toggle} />
+                        <div className="row">
+                            <div className="col-xs-12 col-md-6 user__container__body__header">
+                                <div className="user__container__body__header-img-container">
+                                    <img className="user__container__body__header-img" src={user.avatar} alt="avatar" />
+                                    <img onClick={toggle} className="user__container__body__header-subimg" src={editSvg} alt="edit" />
+                                </div>
+                                <div className="user__container__body__header-name">{user.name}</div>
+                            </div>
                         </div>
-                        <div className="user__container-body-header-name">{user.name}</div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="user__container-body-main col-xs-12 col-md-6">
-                        <UserFormGroup
-                            id="fullName"
-                            type="text"
-                            value={user.name}
-                            // onChange={handleFullNameChange}
-                            placeholder="Full Name"
-                        // readonly="true"
-                        />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="user__container-body-main col-xs-12 col-md-6">
-                        <UserFormGroup
-                            id="email"
-                            type="email"
-                            value={user.email}
-                            // onChange={handleEmailChange}
-                            placeholder="Email"
-                        // readonly="true"
+                    </>}
+                {/* {user &&
+                    <form>
+                        <div className="row">
+                            <div className="user__container__body-main col-xs-12 col-md-6">
+                                <UserFormGroup
+                                    id="fullName"
+                                    type="text"
+                                    value={user.name}
+                                    // onChange={handleFullNameChange}
+                                    placeholder="Full Name"
+                                // readonly="true"
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="user__container__body-main col-xs-12 col-md-6">
+                                <UserFormGroup
+                                    id="email"
+                                    type="email"
+                                    value={user.email}
+                                    // onChange={handleEmailChange}
+                                    placeholder="Email"
+                                // readonly="true"
 
-                        />
-                    </div>
-                    <div className="user__container-body-main col-xs-12 col-md-6">
-                        <UserFormGroup
-                            id="phoneNumber"
-                            type="text"
-                            value={user.phone}
-                            // onChange={handlePhoneNumberChange}
-                            placeholder="Phone"
-                        // readonly="true"
-                        />
-                    </div>
+                                />
+                            </div>
+                            <div className="user__container__body-main col-xs-12 col-md-6">
+                                <UserFormGroup
+                                    id="phoneNumber"
+                                    type="text"
+                                    value={user.phone}
+                                    // onChange={handlePhoneNumberChange}
+                                    placeholder="Phone"
+                                // readonly="true"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="col-xs-12 user__container__body-main-line"></div>
+                        <div className="row">
+                            <div className="user__container__body-main-description col-xs-12 col-md-6">
+                                Change password
                 </div>
-                <div className="col-xs-12 user__container-body-main-line"></div>
-                <div className="row">
-                    <div className="user__container-body-main-description col-xs-12 col-md-6">
-                        Change password
-                </div>
-                </div>
-                <div className="row">
-                    <div className="user__container-body-main col-xs-12 col-md-6">
-                        <UserFormGroup
-                            id="currPassword"
-                            type={isShow ? "text" : "password"}
-                            handleShow={handleShow}
-                            rearSvg={isShow ? eyeSvgShow : eyeSvg}
-                            value={currPassword}
-                            onChange={handleCurrPasswordChange}
-                            placeholder="Current password"
-                        />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="user__container-body-main col-xs-12 col-md-6">
-                        <UserFormGroup
-                            id="newPassword"
-                            type={isShow ? "text" : "password"}
-                            handleShow={handleShow}
-                            rearSvg={isShow ? eyeSvgShow : eyeSvg}
-                            value={newPassword}
-                            onChange={handleNewPasswordChange}
-                            placeholder="New password"
-                        />
-                    </div>
-                    <div className="user__container-body-main col-xs-12 col-md-6">
-                        <UserFormGroup
-                            id="conPassword"
-                            type={isShow ? "text" : "password"}
-                            handleShow={handleShow}
-                            rearSvg={isShow ? eyeSvgShow : eyeSvg}
-                            value={conPassword}
-                            onChange={handleConPasswordChange}
-                            placeholder="Confirm password"
-                        />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-12 col-md-6 login-body-btn-group">
-                        <button className="btn nav-link nav-link-btn">Save</button>
-                        <MyNavLink toPath="#" lable="Log out" />
-                    </div>
-                </div>
-            </form>
+                        </div>
+                        <div className="row">
+                            <div className="user__container__body-main col-xs-12 col-md-6">
+                                <UserFormGroup
+                                    id="currPassword"
+                                    type="password"
+                                    rearSvg={eyeSvg}
+                                    rearSvgShow={eyeSvgShow}
+                                    value={currPassword}
+                                    onChange={handleCurrPasswordChange}
+                                    placeholder="Current password"
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="user__container__body-main col-xs-12 col-md-6">
+                                <UserFormGroup
+                                    id="newPassword"
+                                    type="password"
+                                    rearSvg={eyeSvg}
+                                    rearSvgShow={eyeSvgShow}
+                                    value={newPassword}
+                                    onChange={handleNewPasswordChange}
+                                    placeholder="New password"
+                                />
+                            </div>
+                            <div className="user__container__body-main col-xs-12 col-md-6">
+                                <UserFormGroup
+                                    id="conPassword"
+                                    type="password"
+                                    rearSvg={eyeSvg}
+                                    rearSvgShow={eyeSvgShow}
+                                    value={conPassword}
+                                    onChange={handleConPasswordChange}
+                                    placeholder="Confirm password"
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-12 col-md-6 login-body-btn-group">
+                                <button className="btn nav-link nav-link-btn">Save</button>
+                                <MyNavLink onClick={logoutUser} toPath="#" lable="Log out" />
+                            </div>
+                        </div>
+                    </form>} */}
+                {user && <UserForm updateProfile={updateProfile} user={user} />}
+            </div>
         );
 }
 
@@ -138,15 +155,16 @@ UserPage.propTypes = {
     isAuth: PropTypes.bool.isRequired,
     isLoading: PropTypes.bool.isRequired,
     user: PropTypes.object.isRequired,
+    logoutUser: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
     isAuth: state.auth.isAuth,
     isLoading: state.auth.isLoading,
-    user: state.auth.user
+    user: state.auth.user,
 })
 
 export default connect(
     mapStateToProps,
-    null
+    { logoutUser, updateProfile }
 )(UserPage);

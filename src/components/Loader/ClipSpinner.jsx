@@ -3,13 +3,13 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 
-export const ClipSpinner = ({ css, size }) => {
+export const ClipSpinner = ({ css, size, color }) => {
     return (
         <div>
             <ClipLoader
                 css={css}
                 size={size}
-                color={"#4d0c5a"}
+                color={color}
             />
         </div>
     )
