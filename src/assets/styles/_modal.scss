@@ -18,7 +18,7 @@
     padding: 1.5rem 2rem;
     min-height: 22rem;
     @include center(column, center, center);
-    form {
+    &__container {
       @include center(column, center, center);
       .dropzone {
         outline: none;
@@ -40,6 +40,7 @@
         }
       }
       .btn {
+        @include center(row, center, center);
         margin-top: 1rem;
         padding: 0.8rem 4rem;
         font-size: 1.8rem;

@@ -4,7 +4,7 @@
   font-family: $font;
   &__header {
     width: 100%;
-    height: 16vh;
+    height: 15.8vh;
     background-color: $purple;
     color: #fff;
     display: flex;
@@ -30,10 +30,26 @@
     .user__container__body-main-line {
       width: 100%;
       height: 1px;
+      margin-top: -1rem;
       background-color: rgb(204, 204, 204);
     }
-    .row {
+    .row--header {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    .row--single {
+      padding: 0 0;
+      .user__container__body-main {
+        .form-group {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+    .row--multi {
       padding: 1.1rem 0;
+    }
+    .row,
+    .row--single {
       .user__container__body__header {
         display: flex;
         flex-direction: row;
@@ -66,16 +82,19 @@
 
         .user__container__body__header-name {
           color: $purple;
-          font-size: 2.4rem;
+          font-size: 3.1rem;
           font-weight: 700;
-          margin-left: 1.8rem;
+          margin-left: 2.4rem;
           letter-spacing: 0.2px;
         }
       }
       .user__container__body-main-description {
-        font-size: 1.2rem;
-        font-weight: 700;
+        font-size: 1.7rem;
+        font-weight: 500;
         color: #bfc2d3;
+        margin-top: 2.2rem;
+        margin-left: 0.5rem;
+        margin-bottom: 2.1rem;
       }
       .user__container__body-main {
         position: relative;
@@ -93,11 +112,11 @@
           .form-control {
             color: #212020;
             font-weight: 700;
-            font-size: 1.1rem;
-            padding: 1.1rem 1.6rem;
+            font-size: 1.6rem;
+            padding: 1.6rem 1.6rem;
             border-radius: 4px;
             position: relative;
-            border: solid 1px rgba(33, 32, 32, 0.541);
+            border: solid 1.2px rgba(33, 32, 32, 0.541);
             &:focus {
               outline: none;
               box-shadow: none !important;
@@ -132,9 +151,10 @@
         }
         .form-group--active {
           .form-control__floating-label {
-            top: 0%;
+            top: 5%;
             left: 1%;
             font-size: 1.4rem;
+            transform: translate(0, 0);
             background-color: #fff;
             opacity: 1;
           }
@@ -170,18 +190,19 @@
 @media screen and (min-width: 900px) {
   .user__container {
     > .user__container__header {
-      padding: 1.2rem 13.2rem;
+      padding: 1.2rem 9.2rem;
+      line-height: 2.3;
       .user__container__header__wrapper {
         .user__container__header__title {
-          font-size: 3rem;
+          font-size: 3.1rem;
         }
         .user__container__header__description {
-          font-size: 1.8rem;
+          font-size: 1.7rem;
         }
       }
     }
     > .user__container__body {
-      padding: 1.2rem 13.2rem;
+      padding: 1.2rem 9.2rem;
       & .user__container__body-main__errorMessage {
         position: absolute;
         left: 5%;
@@ -191,13 +212,23 @@
       }
       .user__container__body-main {
         .form-group {
-          width: 95%;
-          padding: 0.5rem 0;
+          width: 100%;
+          padding: 1.1rem 0;
+        }
+        .form-group--active {
+          .form-control__floating-label {
+            top: -1%;
+            left: 4%;
+            font-size: 1.4rem;
+            transform: translate(0, 0);
+            background-color: #fff;
+            opacity: 1;
+          }
         }
       }
     }
     > .user__container__body__header-name {
-      font-size: 3;
+      font-size: 4;
     }
 
     > .nav-link {

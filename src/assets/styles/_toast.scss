@@ -1,10 +1,10 @@
-.toast {
-}
-
-.toast--show {
-  display: block;
-}
-
-.toast--hide {
-  display: none;
+.Toastify__toast-container {
+  .Toastify__toast {
+    .Toastify__toast-body {
+      font-family: $font;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
 }

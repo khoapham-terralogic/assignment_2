@@ -16,19 +16,19 @@ const MyForm = props => {
         handleChange,
         handleBlur,
         handleSubmit,
-        user
+        user,
     } = props;
     const logout = () => {
         store.dispatch(logoutUser())
     }
     return (
         <form onSubmit={handleSubmit}>
-            <div className="row">
+            <div className="row row--single">
                 <div className="user__container__body-main col-xs-12 col-md-6">
                     <UserFormGroup
                         id="fullName"
                         type="text"
-                        value={values.fullName}
+                        value={values.fullName ? values.fullName : user.name}
                         defaultValue={user.name}
                         onChange={handleChange}
                         placeholder="Full Name"
@@ -37,13 +37,13 @@ const MyForm = props => {
                     {touched.fullName && errors.fullName && <p className="user__container__body-main__errorMessage">{errors.fullName}</p>}
                 </div>
             </div>
-            <div className="row">
+            <div className="row row--multi">
                 <div className="user__container__body-main col-xs-12 col-md-6">
                     <UserFormGroup
                         id="email"
                         type="email"
                         defaultValue={user.email}
-                        value={values.email}
+                        value={values.email ? values.email : user.email}
                         onChange={handleChange}
                         placeholder="Email"
                     // readonly="true"
@@ -55,7 +55,7 @@ const MyForm = props => {
                     <UserFormGroup
                         id="phoneNumber"
                         type="text"
-                        value={values.phoneNumber}
+                        value={values.phoneNumber ? values.phoneNumber : user.phone}
                         defaultValue={user.phone}
                         onChange={handleChange}
                         placeholder="Phone"
@@ -71,7 +71,7 @@ const MyForm = props => {
                     Change password
                 </div>
             </div>
-            <div className="row">
+            <div className="row row--single">
                 <div className="user__container__body-main col-xs-12 col-md-6">
                     <UserFormGroup
                         id="currentPassword"
@@ -85,7 +85,7 @@ const MyForm = props => {
                     {touched.currentPassword && errors.currentPassword && <p className="user__container__body-main__errorMessage">{errors.currentPassword}</p>}
                 </div>
             </div>
-            <div className="row">
+            <div className="row row--multi">
                 <div className="user__container__body-main col-xs-12 col-md-6">
                     <UserFormGroup
                         id="newPassword"
@@ -122,6 +122,7 @@ const MyForm = props => {
 };
 
 const UserForm = withFormik({
+    // enableReinitialize: true,
     mapPropsToValues: ({ fullName, email, phoneNumber, currentPassword, newPassword, confirmPassword }) => ({
         email: email,
         fullName: fullName,
@@ -130,10 +131,19 @@ const UserForm = withFormik({
         newPassword: newPassword || "",
         confirmPassword: confirmPassword || "",
     }),
+    // mapPropsToValues: (values) => ({
+    //     email: user.email || values.email,
+    //     fullName: user.name || values.fullName,
+    //     phoneNumber: user.phone || values.phoneNumber,
+    //     // currentPassword: "" || values.currentPassword,
+    //     // newPassword: values.newPassword || "",
+    //     // confirmPassword: values.confirmPassword || "",
+    // }),
     // Custom sync validation
     validationSchema: formSchema,
     handleSubmit: (values, { props }) => {
-        props.updateProfile(values)
+        const { email, phoneNumber, fullName, currentPassword, newPassword } = values
+        props.updateProfile({ email, phone: phoneNumber, name: fullName, currentPassword, password: newPassword, avatar: props.avatar })
     }
 })(MyForm);
 

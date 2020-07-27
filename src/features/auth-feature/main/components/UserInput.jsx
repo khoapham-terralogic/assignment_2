@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types'
 
-const UserFormGroup = ({ id, value, defaultValue, type, placeholder, rearSvg, readonly, rearSvgShow, ...rest }) => {
+const UserFormGroup = ({ id, value, type, placeholder, rearSvg, readonly, rearSvgShow, ...rest }) => {
     const [isActive, setIsActive] = useState(false)
     const [isShow, setIsShow] = useState(false)
     const handleShow = () => { setIsShow(!isShow) }
     const inputEl = useRef(null)
     const handleBlur = () => {
-        if (value || defaultValue) setIsActive(true)
+        if (value) setIsActive(true)
         else setIsActive(false)
     }
     useEffect(() => {
-        if (value || defaultValue) setIsActive(true)
-    }, [value, defaultValue])
+        if (value) setIsActive(true)
+    }, [value])
     return (
         <div className={isActive ? "form-group form-group--active" : "form-group "}>
             <input
@@ -20,7 +20,7 @@ const UserFormGroup = ({ id, value, defaultValue, type, placeholder, rearSvg, re
                 className="form-control"
                 type={!isShow ? type : 'text'}
                 id={id}
-                defaultValue={defaultValue}
+                // defaultValue={defaultValue}
                 onFocus={() => setIsActive(true)}
                 onBlur={handleBlur}
                 {...rest}

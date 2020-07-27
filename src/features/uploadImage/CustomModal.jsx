@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
-import { Form } from 'reactstrap'
 import MyDropzone from './MyDropZone';
 import store from '../../redux/store';
-import { uploadImage } from '../../redux/actions/userAction'
+// import { uploadImage } from '../../redux/actions/userAction'
+import { ClipSpinner } from '../../components'
 
-const CustomModal = ({ isOpen, toggle }) => {
+const CustomModal = ({ isOpen, toggle, isLoading, uploadImage }) => {
     const [file, setFile] = useState(null)
-    const [isActive, setIsActive] = useState(false)
     const callback = data => {
         setFile(data[0])
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        store.dispatch(uploadImage({ file }))
+        uploadImage({ file })
     }
     return (
         <Modal className="custom-modal" isOpen={isOpen} toggle={toggle}>
@@ -23,10 +22,10 @@ const CustomModal = ({ isOpen, toggle }) => {
                 </div>
             </ModalHeader>
             <ModalBody className="custom-modal__body">
-                <Form onSubmit={handleSubmit}>
+                <div className="custom-modal__body__container">
                     <MyDropzone parentCallback={callback} isActive={file} />
-                    <Button className="btn">Upload</Button>
-                </Form>
+                    {isLoading ? <Button onClick={handleSubmit} disabled className="btn"><ClipSpinner color="#fff" size={20} /></Button> : <Button onClick={handleSubmit} className="btn">Upload</Button>}
+                </div>
             </ModalBody>
         </Modal>
     );

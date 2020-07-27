@@ -6,7 +6,7 @@ import UserFormGroup from '../components/UserInput';
 import { MyNavLink } from '../../../../components';
 import { eyeSvg, eyeSvgShow, editSvg } from '../../../../constants'
 import { logoutUser } from '../../../../redux/actions/authAction';
-import { updateProfile } from '../../../../redux/actions/userAction'
+import { updateProfile, uploadImage } from '../../../../redux/actions/userAction'
 import CustomModal from '../../../uploadImage/CustomModal';
 import UserForm from '../components/UserForm';
 
@@ -16,7 +16,10 @@ const UserPage = ({
     isLoading,
     user,
     logoutUser,
-    updateProfile
+    updateProfile,
+    userLoading,
+    uploadImage,
+    avatarLink
 }) => {
     const history = useHistory()
     const [isOpen, setIsOpen] = useState(false)
@@ -47,11 +50,11 @@ const UserPage = ({
             <div className="user__container__body">
                 {user &&
                     <>
-                        <CustomModal isOpen={isOpen} toggle={toggle} />
-                        <div className="row">
+                        <CustomModal uploadImage={uploadImage} isLoading={userLoading} isOpen={isOpen} toggle={toggle} />
+                        <div className="row row--single row--header">
                             <div className="col-xs-12 col-md-6 user__container__body__header">
                                 <div className="user__container__body__header-img-container">
-                                    <img className="user__container__body__header-img" src={user.avatar} alt="avatar" />
+                                    <img className="user__container__body__header-img" src={`http://api.terralogic.ngrok.io/${user.avatar}`} alt="avatar" />
                                     <img onClick={toggle} className="user__container__body__header-subimg" src={editSvg} alt="edit" />
                                 </div>
                                 <div className="user__container__body__header-name">{user.name}</div>
@@ -146,7 +149,7 @@ const UserPage = ({
                             </div>
                         </div>
                     </form>} */}
-                {user && <UserForm updateProfile={updateProfile} user={user} />}
+                {user && <UserForm avatar={avatarLink} updateProfile={updateProfile} user={user} />}
             </div>
         );
 }
@@ -155,16 +158,20 @@ UserPage.propTypes = {
     isAuth: PropTypes.bool.isRequired,
     isLoading: PropTypes.bool.isRequired,
     user: PropTypes.object.isRequired,
-    logoutUser: PropTypes.func.isRequired
+    logoutUser: PropTypes.func.isRequired,
+    userLoading: PropTypes.bool.isRequired,
+    uploadImage: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
     isAuth: state.auth.isAuth,
     isLoading: state.auth.isLoading,
     user: state.auth.user,
+    userLoading: state.user.isLoading,
+    avatarLink: state.user.data
 })
 
 export default connect(
     mapStateToProps,
-    { logoutUser, updateProfile }
+    { logoutUser, updateProfile, uploadImage }
 )(UserPage);

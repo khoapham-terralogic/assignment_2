@@ -43,8 +43,9 @@ const App = ({
           <ProtectedRoute path='/user' exact component={UserLayout} isAuth={isAuth} />
         </Switch>
         <ToastContainer
+          className="custom-toast"
           position="top-center"
-          autoClose={2000}
+          autoClose={3000}
           hideProgressBar
           newestOnTop={false}
           closeOnClick
