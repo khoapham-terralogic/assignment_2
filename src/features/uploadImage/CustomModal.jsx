@@ -1,21 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, ModalBody, ModalHeader, Button } from 'reactstrap';
-import MyDropzone from './MyDropZone';
-import store from '../../redux/store';
-// import { uploadImage } from '../../redux/actions/userAction'
-import { ClipSpinner } from '../../components'
+import { toast } from 'react-toastify';
 
-const CustomModal = ({ isOpen, toggle, isLoading, uploadImage }) => {
+import MyDropzone from './MyDropZone';
+
+const CustomModal = ({ isOpen, toggle, isLoading, uploadImage, modalCallback }) => {
     const [file, setFile] = useState(null)
     const callback = data => {
         setFile(data[0])
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        uploadImage({ file })
+        await uploadImage({ file })
+        setFile(null)
+        modalCallback(false)
     }
+    useEffect(() => {
+        if (file) {
+            const fileType = file['type'];
+            const validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+            if (!validImageTypes.includes(fileType)) {
+                // invalid file type code goes here.
+                toast.error("Invalid file type")
+                setFile(null)
+            }
+        }
+    }, [file])
     return (
-        <Modal className="custom-modal" isOpen={isOpen} toggle={toggle}>
+        <Modal centered className="custom-modal" isOpen={isOpen} toggle={toggle}>
             <ModalHeader className="custom-modal__header" toggle={toggle}>
                 <div className="custom-modal__header__title">
                     Upload image
@@ -24,7 +36,11 @@ const CustomModal = ({ isOpen, toggle, isLoading, uploadImage }) => {
             <ModalBody className="custom-modal__body">
                 <div className="custom-modal__body__container">
                     <MyDropzone parentCallback={callback} isActive={file} />
-                    {isLoading ? <Button onClick={handleSubmit} disabled className="btn"><ClipSpinner color="#fff" size={20} /></Button> : <Button onClick={handleSubmit} className="btn">Upload</Button>}
+                    {/* {file ? <>
+                        {isLoading ? <Button onClick={handleSubmit} disabled className="btn"><ClipSpinner color="#fff" size={20} /></Button> : <Button onClick={handleSubmit} className="btn">Upload</Button>}
+                    </> : null} */}
+                    {file ? <Button onClick={handleSubmit} className="btn">Upload</Button> : null}
+
                 </div>
             </ModalBody>
         </Modal>

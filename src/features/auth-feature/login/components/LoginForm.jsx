@@ -28,6 +28,7 @@ const MyForm = props => {
                 <MyNavLink toPath="/auth/register" lable="Register" />
                 <button type="submit" className="btn nav-link nav-link-btn">Login</button>
             </div>
+            <div className="form-container checkbox-container"><input type="checkbox" /><label htmlFor="checkbox">Remember me</label></div>
         </form>
 
     );

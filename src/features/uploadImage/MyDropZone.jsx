@@ -2,6 +2,8 @@ import React, { useCallback } from 'react';
 
 import { useDropzone } from 'react-dropzone'
 
+import { uploadSvg } from '../../constants'
+
 const MyDropzone = ({ parentCallback, isActive }) => {
     const onDrop = useCallback(acceptedFiles => {
         // Do something with the files
@@ -12,6 +14,7 @@ const MyDropzone = ({ parentCallback, isActive }) => {
     return (
         <div className={isActive ? "dropzone dropzone--active" : "dropzone dropzone--inactive"} {...getRootProps()}>
             <input {...getInputProps()} />
+            <img className="dropzone__img" src={uploadSvg} alt="upload" />
             {isActive ?
                 <p className="dropzone--active__p">Your file has been selected, choose another?</p> : <>
                     {

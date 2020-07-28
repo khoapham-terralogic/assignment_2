@@ -10,6 +10,7 @@ const axiosClient = axios.create({
 })
 
 axiosClient.interceptors.request.use(async (config) => {
+    console.log("Request config: ", config);
     return config
 })
 
@@ -17,6 +18,7 @@ axiosClient.interceptors.response.use((response) => {
     if (response && response.data)
         return response.data
 }, (error) => {
+    console.log("Interceptor err: ", error);
     throw error
 })
 

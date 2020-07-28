@@ -24,9 +24,10 @@ export const tokenConfig = (getState) => {
 }
 
 export const loadUser = () => (dispatch, getState) => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token") || getState().auth.token
     if (token) {
         const decoded = jwtDecode(token)
+        // localStorage.setItem('user', JSON.stringify(decoded))
         dispatch({ type: USER_LOADED, payload: decoded })
     } else dispatch({ type: AUTH_ERROR })
 
@@ -51,7 +52,10 @@ export const loginUser = ({ email = "", password = "" }) => async dispatch => {
     const body = JSON.stringify({ email, password })
     try {
         const res = await authApi.login(body)
+        const decoded = jwtDecode(res.token)
+        localStorage.setItem('user', JSON.stringify(decoded))
         dispatch({ type: LOGIN_SUCCESS, payload: res })
+        toast.info(res.msg)
     } catch (e) {
         dispatch(returnError(e.response.data, e.response.status, "LOGIN_FAILED"))
         dispatch({ type: LOGIN_FAIL })

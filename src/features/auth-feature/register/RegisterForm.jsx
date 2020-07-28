@@ -1,9 +1,7 @@
 import React from 'react';
 import { withFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
-import store from '../../../redux/store'
 import { emailSvg, eyeSvg, eyeSvgShow, keySvg } from '../../../constants'
-import { registerUser } from '../../../redux/actions/authAction'
 import { registerSchema } from '../../../helpers/schema'
 import FormGroup from '../login/components/FormGroup';
 import { MyNavLink } from '../../../components';

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
-import { Toast, ClipSpinner } from '../../../../components'
+import { ClipSpinner } from '../../../../components'
 
 import { loginUser } from '../../../../redux/actions/authAction';
 import LoginForm from '../components/LoginForm';

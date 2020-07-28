@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withFormik } from 'formik';
-import { eyeSvg, eyeSvgShow, editSvg } from '../../../../constants'
-import { loginSchema, formSchema } from '../../../../helpers/schema'
+import { eyeSvg, eyeSvgShow } from '../../../../constants'
+import { formSchema } from '../../../../helpers/schema'
 import { MyNavLink } from '../../../../components';
-import CustomModal from '../../../uploadImage/CustomModal';
 import UserFormGroup from './UserInput';
 import { logoutUser } from '../../../../redux/actions/authAction';
 import store from '../../../../redux/store';
@@ -14,9 +13,8 @@ const MyForm = props => {
         touched,
         errors,
         handleChange,
-        handleBlur,
+        // handleBlur,
         handleSubmit,
-        user,
     } = props;
     const logout = () => {
         store.dispatch(logoutUser())
@@ -28,8 +26,8 @@ const MyForm = props => {
                     <UserFormGroup
                         id="fullName"
                         type="text"
-                        value={values.fullName ? values.fullName : user.name}
-                        defaultValue={user.name}
+                        value={values.fullName}
+                        defaultValue={values.fullName}
                         onChange={handleChange}
                         placeholder="Full Name"
                     // readonly="true"
@@ -42,8 +40,8 @@ const MyForm = props => {
                     <UserFormGroup
                         id="email"
                         type="email"
-                        defaultValue={user.email}
-                        value={values.email ? values.email : user.email}
+                        defaultValue={values.email}
+                        value={values.email}
                         onChange={handleChange}
                         placeholder="Email"
                     // readonly="true"
@@ -55,8 +53,8 @@ const MyForm = props => {
                     <UserFormGroup
                         id="phoneNumber"
                         type="text"
-                        value={values.phoneNumber ? values.phoneNumber : user.phone}
-                        defaultValue={user.phone}
+                        value={values.phoneNumber}
+                        defaultValue={values.phoneNumber}
                         onChange={handleChange}
                         placeholder="Phone"
                     // readonly="true"
@@ -122,11 +120,11 @@ const MyForm = props => {
 };
 
 const UserForm = withFormik({
-    // enableReinitialize: true,
+    // enableReinitialize: true
     mapPropsToValues: ({ fullName, email, phoneNumber, currentPassword, newPassword, confirmPassword }) => ({
-        email: email,
-        fullName: fullName,
-        phoneNumber: phoneNumber,
+        email: email || JSON.parse(localStorage.getItem("user")).email,
+        fullName: fullName || JSON.parse(localStorage.getItem("user")).name,
+        phoneNumber: phoneNumber || JSON.parse(localStorage.getItem("user")).phone,
         currentPassword: currentPassword || "",
         newPassword: newPassword || "",
         confirmPassword: confirmPassword || "",
@@ -143,7 +141,7 @@ const UserForm = withFormik({
     validationSchema: formSchema,
     handleSubmit: (values, { props }) => {
         const { email, phoneNumber, fullName, currentPassword, newPassword } = values
-        props.updateProfile({ email, phone: phoneNumber, name: fullName, currentPassword, password: newPassword, avatar: props.avatar })
+        props.updateProfile({ email, phone: phoneNumber, name: fullName, currentPassword, password: newPassword, avatar: props.avatar || JSON.parse(localStorage.getItem("user")).avatar })
     }
 })(MyForm);
 

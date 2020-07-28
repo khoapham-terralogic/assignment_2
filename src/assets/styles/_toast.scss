@@ -1,10 +1,59 @@
 .Toastify__toast-container {
   .Toastify__toast {
+    padding: 1.4rem 1.4rem;
+    border-radius: 0.4rem;
+    min-width: 10rem;
+    background: linear-gradient(
+      90deg,
+      rgba(224, 16, 205, 1) 16%,
+      rgba(154, 0, 255, 1) 40%,
+      rgba(112, 0, 185, 1) 100%
+    );
+    box-shadow: 0 5px 15px #777;
     .Toastify__toast-body {
       font-family: $font;
       text-align: center;
       font-size: 1.6rem;
       font-weight: 500;
+    }
+  }
+  .Toastify__toast--error {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 215, 1) 0%,
+      rgba(224, 16, 16, 1) 50%,
+      rgba(230, 0, 124, 1) 100%
+    );
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Toastify__toast-container {
+    .Toastify__toast {
+      padding: 1.4rem 1.6rem;
+      border-radius: 0.4rem;
+      min-width: 40rem;
+      background: linear-gradient(
+        90deg,
+        rgba(224, 16, 205, 1) 16%,
+        rgba(154, 0, 255, 1) 40%,
+        rgba(112, 0, 185, 1) 100%
+      );
+      box-shadow: 0 5px 15px #777;
+      .Toastify__toast-body {
+        font-family: $font;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+    .Toastify__toast--error {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 0, 215, 1) 0%,
+        rgba(224, 16, 16, 1) 50%,
+        rgba(230, 0, 124, 1) 100%
+      );
     }
   }
 }
