@@ -117,11 +117,11 @@
       }
       & > .errorMessage {
         position: absolute;
-        color: $text-color;
-        bottom: -42%;
+        color: #e71717;
+        bottom: -2.6rem;
         left: 10%;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -161,6 +161,11 @@
         background-color: $pink;
         position: relative;
         overflow: hidden;
+        transition: all 0.3s;
+        &:hover {
+          transform: perspective(1000px) translateY(-2px);
+          box-shadow: 0 5px 10px rgb(151, 151, 151);
+        }
         &::before {
           position: absolute;
           content: "";

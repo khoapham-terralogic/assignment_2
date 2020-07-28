@@ -3,7 +3,9 @@ import {
     UPDATE_FAIL,
     UPDATE_SUCCESS,
     UPLOAD_FAIL,
-    USER_ACTION_LOADING
+    USER_ACTION_LOADING,
+    USER_ACTION_LOADED,
+    USER_ACTION_FAIL
 } from './types'
 import userApi from '../../api/userApi'
 import { tokenConfig } from './authAction'
@@ -21,8 +23,9 @@ export const uploadImage = ({ file }) => async (dispatch, getState) => {
         dispatch({ type: UPLOAD_SUCCESS, payload: res })
         toast.info(res.msg)
     } catch (error) {
-        dispatch(returnError(error.response.data, error.response.status, "UPLOAD_FAILED"))
-        dispatch({ type: UPLOAD_FAIL, payload: error })
+        // dispatch(returnError(error.response.data, error.response.status, "UPLOAD_FAILED"))
+        // dispatch({ type: UPLOAD_FAIL, payload: error })
+        dispatch({ type: USER_ACTION_FAIL, status: "SOMETHING_WRONG" })
     }
 }
 
@@ -42,7 +45,7 @@ export const updateProfile = ({ email, name, phone, avatar, password, currentPas
         }
         try {
             const res = await updateProfile()
-            dispatch({ type: UPDATE_SUCCESS, payload: res })
+            dispatch({ type: USER_ACTION_LOADED, payload: res, status: "UPDATE_SUCCESS" })
             if (res) {
                 const { avatar, email, id, name, phone } = res[0].data
                 const existUser = JSON.parse(localStorage.getItem('user'))
@@ -52,15 +55,16 @@ export const updateProfile = ({ email, name, phone, avatar, password, currentPas
                 existUser.phone = phone;
                 existUser.id = id;
                 localStorage.setItem('user', JSON.stringify(existUser))
-                toast.info(`${res[0].msg} ${res[1].msg}`)
+                toast.info(res[0].msg)
+                toast.info(res[1].msg)
             }
         } catch (error) {
             console.log(error);
+            dispatch({ type: USER_ACTION_FAIL, status: "SOMETHING_WRONG" })
         }
     } catch (error) {
         // dispatch(returnError(error.response.data, error.response.status, "UPDATE_FAILED"))
         console.log(error);
-        dispatch({ type: UPDATE_FAIL, payload: error })
-
+        dispatch({ type: USER_ACTION_FAIL, status: "SOMETHING_WRONG" })
     }
 }

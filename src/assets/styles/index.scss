@@ -33,6 +33,11 @@ p {
   font-size: 1.6rem;
 }
 
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
 // img {
 //   max-width: 100%;
 // }

@@ -8,7 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [x] Initialize app with create-react-app
 - [x] Done
-- [ ] Implement logic
+- [x] Implement logic
+- [ ] Write unit test
+- [ ] Finalize app
 
 ### Project structure
 
@@ -36,6 +38,12 @@ src
 +---styles
 index.css
 index.scss
+
+```javascript
+git clone
+npm install
+npm start
+```
 
 ## Available Scripts
 

@@ -639,11 +639,11 @@
 
 .login .login-body .form-container > .errorMessage {
   position: absolute;
-  color: #313558;
-  bottom: -42%;
+  color: #e71717;
+  bottom: -2.6rem;
   left: 10%;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .login .login-body .login-body-btn-group {
@@ -702,6 +702,15 @@
   background-color: #bd10e0;
   position: relative;
   overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login .login-body .login-body-btn-group .nav-link-btn:hover {
+  -webkit-transform: perspective(1000px) translateY(-2px);
+          transform: perspective(1000px) translateY(-2px);
+  -webkit-box-shadow: 0 5px 10px #979797;
+          box-shadow: 0 5px 10px #979797;
 }
 
 .login .login-body .login-body-btn-group .nav-link-btn::before {
@@ -973,6 +982,11 @@ a {
 
 p {
   font-size: 1.6rem;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
 }
 
 @media screen and (min-width: 900px) {
