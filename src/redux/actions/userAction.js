@@ -10,7 +10,6 @@ import {
 import userApi from '../../api/userApi'
 import { tokenConfig } from './authAction'
 import { toast } from 'react-toastify'
-import { returnError } from './errorAction'
 
 export const uploadImage = ({ file }) => async (dispatch, getState) => {
     dispatch({ type: USER_ACTION_LOADING })
@@ -24,7 +23,7 @@ export const uploadImage = ({ file }) => async (dispatch, getState) => {
         toast.info(res.msg)
     } catch (error) {
         // dispatch(returnError(error.response.data, error.response.status, "UPLOAD_FAILED"))
-        // dispatch({ type: UPLOAD_FAIL, payload: error })
+        dispatch({ type: UPLOAD_FAIL })
         dispatch({ type: USER_ACTION_FAIL, status: "SOMETHING_WRONG" })
     }
 }
@@ -51,7 +50,7 @@ export const updateProfile = ({ email, name, phone, avatar, password, currentPas
                 const existUser = JSON.parse(localStorage.getItem('user'))
                 existUser.name = name;
                 existUser.email = email;
-                existUser.avatar = avatar;
+                existUser.avatar = getState().user.data || avatar;
                 existUser.phone = phone;
                 existUser.id = id;
                 localStorage.setItem('user', JSON.stringify(existUser))

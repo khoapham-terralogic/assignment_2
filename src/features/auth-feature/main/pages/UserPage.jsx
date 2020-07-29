@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
 import { ClipSpinner } from '../../../../components';
-import { editSvg } from '../../../../constants'
+import { editSvg, avatar } from '../../../../constants'
 import { logoutUser } from '../../../../redux/actions/authAction';
 import { updateProfile, uploadImage } from '../../../../redux/actions/userAction'
 import CustomModal from '../../../uploadImage/CustomModal';
@@ -49,12 +49,23 @@ const UserPage = ({
                     </>} */}
                 {local_user &&
                     <>
-                        <CustomModal modalCallback={callBack} uploadImage={uploadImage} isLoading={userLoading} isOpen={isOpen} toggle={toggle} />
+                        <CustomModal
+                            modalCallback={callBack}
+                            uploadImage={uploadImage}
+                            isLoading={userLoading}
+                            isOpen={isOpen}
+                            toggle={toggle} />
                         <div className="row row--single row--header">
                             <div className="col-xs-12 col-md-6 user__container__body__header">
                                 <div className="user__container__body__header-img-container">
-                                    <img className="user__container__body__header-img" src={`http://api.terralogic.ngrok.io/${local_user.avatar}`} alt="avatar" />
-                                    <img onClick={toggle} className="user__container__body__header-subimg" src={editSvg} alt="edit" />
+                                    <img
+                                        className="user__container__body__header-img"
+                                        src={local_user.avatar ? `http://api.terralogic.ngrok.io/${local_user.avatar}` : avatar} alt="avatar" />
+                                    <img
+                                        onClick={toggle}
+                                        className="user__container__body__header-subimg"
+                                        src={editSvg}
+                                        alt="edit" />
                                 </div>
                                 <div className="user__container__body__header-name">{local_user.displayName}</div>
                             </div>

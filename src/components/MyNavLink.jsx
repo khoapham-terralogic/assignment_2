@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 const MyNavLink = ({ lable, toPath, onClick }) => {
     return (
         <NavLink
+            data-testid="navlink"
             to={toPath}
             onClick={onClick}
             className="nav-link nav-link-custom"

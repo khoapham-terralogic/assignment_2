@@ -161,7 +161,7 @@
         background-color: $pink;
         position: relative;
         overflow: hidden;
-        transition: all 0.3s;
+        transition: all 0.4s;
         &:hover {
           transform: perspective(1000px) translateY(-2px);
           box-shadow: 0 5px 10px rgb(151, 151, 151);

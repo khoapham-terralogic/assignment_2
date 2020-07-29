@@ -17,18 +17,40 @@ const MyForm = props => {
     return (
         <form className="login-body" onSubmit={handleSubmit}>
             <div className="form-container">
-                <Formgroup id="email" type="email" label="email" labelName="email" placeholder="Enter your email" value={values.email} onChange={handleChange} frontSvg={emailSvg} onBlur={handleBlur} />
+                <Formgroup
+                    id="email"
+                    type="email"
+                    label="email"
+                    labelName="email"
+                    placeholder="Enter your email"
+                    value={values.email}
+                    onChange={handleChange}
+                    frontSvg={emailSvg}
+                    onBlur={handleBlur} />
                 {touched.email && errors.email && <p className="errorMessage">{errors.email}</p>}
             </div>
 
             <div className="form-container">
-                <Formgroup id="password" type="password" label="password" labelName="password" placeholder="Enter your password" value={values.password} onChange={handleChange} frontSvg={keySvg} rearSvg={eyeSvg} rearSvgShow={eyeSvgShow} onBlur={handleBlur} />
+                <Formgroup
+                    id="password"
+                    type="password"
+                    label="password"
+                    labelName="password"
+                    placeholder="Enter your password"
+                    value={values.password}
+                    onChange={handleChange}
+                    frontSvg={keySvg} rearSvg={eyeSvg}
+                    rearSvgShow={eyeSvgShow}
+                    onBlur={handleBlur} />
                 {touched.password && errors.password && <p className="errorMessage">{errors.password}</p>}</div>
             <div className="form-group login-body-btn-group">
                 <MyNavLink toPath="/auth/register" lable="Register" />
                 <button type="submit" className="btn nav-link nav-link-btn">Login</button>
             </div>
-            <div className="form-container checkbox-container"><input type="checkbox" /><label htmlFor="checkbox">Remember me</label></div>
+            <div className="form-container checkbox-container">
+                <input type="checkbox" />
+                <label htmlFor="checkbox">Remember me</label>
+            </div>
         </form>
 
     );

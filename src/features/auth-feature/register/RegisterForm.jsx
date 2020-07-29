@@ -20,23 +20,70 @@ const MyForm = props => {
     return (
         <form className="login-body" onSubmit={handleSubmit}>
             <div className="form-container">
-                <FormGroup id="email" type="email" label="email" placeholder="Enter your email" labelName="email" value={values.email} onChange={handleChange} frontSvg={emailSvg} onBlur={handleBlur} />
+                <FormGroup id="email"
+
+                    type="email"
+                    label="email"
+
+                    placeholder="Enter your email"
+                    labelName="email" value={values.email}
+
+                    onChange={handleChange}
+
+                    frontSvg={emailSvg}
+                    onBlur={handleBlur} />
                 {touched.email && errors.email && <p className="errorMessage">{errors.email}</p>}
             </div>
             <div className="form-container">
-                <FormGroup id="password" type="password" label="password" placeholder="Enter your password" labelName="password" value={values.password} onChange={handleChange} frontSvg={keySvg} rearSvg={eyeSvg} rearSvgShow={eyeSvgShow} onBlur={handleBlur} />
+                <FormGroup id="password"
+                    type="password"
+                    label="password"
+                    placeholder="Enter your password"
+                    labelName="password"
+                    value={values.password}
+                    onChange={handleChange}
+                    frontSvg={keySvg}
+                    rearSvg={eyeSvg}
+                    rearSvgShow={eyeSvgShow}
+                    onBlur={handleBlur} />
                 {touched.password && errors.password && <p className="errorMessage">{errors.password}</p>}
             </div>
             <div className="form-container">
-                <FormGroup id="confirmPassword" type="password" label="conPassword" placeholder="Enter your password" labelName="confirm password" value={values.confirmPassword} onChange={handleChange} frontSvg={keySvg} rearSvg={eyeSvg} rearSvgShow={eyeSvgShow} onBlur={handleBlur} />
+                <FormGroup id="confirmPassword"
+                    type="password"
+                    label="conPassword"
+                    placeholder="Enter your password"
+                    labelName="confirm password"
+                    value={values.confirmPassword}
+                    onChange={handleChange}
+                    frontSvg={keySvg}
+                    rearSvg={eyeSvg}
+                    rearSvgShow={eyeSvgShow}
+                    onBlur={handleBlur} />
                 {touched.confirmPassword && errors.confirmPassword && <p className="errorMessage">{errors.confirmPassword}</p>}
             </div>
             <div className="form-container">
-                <FormGroup id="fullName" type="text" label="fullName" labelName="full name" placeholder="Enter your name" value={values.fullName} onChange={handleChange} frontSvg={emailSvg} onBlur={handleBlur} />
+                <FormGroup id="fullName"
+                    type="text"
+                    label="fullName"
+                    labelName="full name"
+                    placeholder="Enter your name"
+                    value={values.fullName}
+                    onChange={handleChange}
+                    frontSvg={emailSvg}
+                    onBlur={handleBlur} />
                 {touched.fullName && errors.fullName && <p className="errorMessage">{errors.fullName}</p>}
             </div>
             <div className="form-container">
-                <FormGroup id="phoneNumber" type="text" label="phoneNumber" labelName="phone number" placeholder="Enter your phone" value={values.phoneNumber} onChange={handleChange} frontSvg={emailSvg} onBlur={handleBlur} />
+                <FormGroup id="phoneNumber"
+                    type="text"
+                    label="phoneNumber"
+                    labelName="phone number"
+                    placeholder="Enter your phone"
+                    value={values.phoneNumber}
+                    onChange={handleChange}
+                    frontSvg={emailSvg}
+                    onBlur={handleBlur} />
                 {touched.phoneNumber && errors.phoneNumber && <p className="errorMessage">{errors.phoneNumber}</p>}
             </div>
             <div className="form-group login-body-btn-group">

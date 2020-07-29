@@ -10,11 +10,18 @@ const FormGroup = ({ type, label, labelName, frontSvg, rearSvg, rearSvgShow, ...
             <div className={`${label}-group`}>
                 <img className="form-group-frontSvg" src={frontSvg} alt="" />
                 <input
+                    data-testid="input"
                     type={!isShow ? type : "text"}
                     className={`form-control ${label}-group`}
                     {...rest}
+
                 />
-                <img className="form-group-rearSvg" onClick={handleIsShow} src={!isShow ? rearSvg : rearSvgShow} alt="" />
+                <img
+                    data-testid="toggle-image"
+                    className="form-group-rearSvg"
+                    onClick={handleIsShow}
+                    src={!isShow ? rearSvg : rearSvgShow}
+                    alt="" />
             </div>
         </div>
     );

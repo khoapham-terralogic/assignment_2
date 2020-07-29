@@ -6,6 +6,7 @@ import keySvg from '../assets/images/Suche02.svg'
 import eyeSvg from '../assets/images/Suche03.svg'
 import eyeSvgShow from '../assets/images/Suche04.svg'
 import uploadSvg from '../assets/images/upload.svg'
+import avatar from '../assets/images/avatar.png'
 export {
     logo,
     rightImage,
@@ -14,5 +15,6 @@ export {
     eyeSvg,
     eyeSvgShow,
     editSvg,
-    uploadSvg
+    uploadSvg,
+    avatar
 }

@@ -9,12 +9,13 @@ import { registerUser } from '../../../../redux/actions/authAction'
 const RegisterPage = ({
     registerUser,
     isLoading,
-    isAuth
+    isAuth,
+    msg
 }) => {
     const history = useHistory()
     useEffect(() => {
         if (isAuth) history.push("/user")
-    }, [isAuth, history])
+    }, [msg, isAuth, history])
     return (
         <div className="login">
             {isLoading ? <div className="loadingBackground"><ClipSpinner size={40} color="#fff" /></div> : null}
@@ -27,13 +28,14 @@ const RegisterPage = ({
 RegisterPage.propTypes = {
     isAuth: PropTypes.bool.isRequired,
     isLoading: PropTypes.bool.isRequired,
-    registerUser: PropTypes.func.isRequired
+    registerUser: PropTypes.func.isRequired,
+    msg: PropTypes.string,
 }
 
 const mapStateToProps = state => ({
     isAuth: state.auth.isAuth,
-    isLoading: state.auth.isLoading
-
+    isLoading: state.auth.isLoading,
+    msg: state.auth.msg
 })
 
 export default connect(
