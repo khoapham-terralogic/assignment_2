@@ -18,30 +18,130 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Project structure
 
 ```
-src
-| App.js
-| App.test.js
-| index.js
-| serviceWorker.js
-| setupTests.js
-|
-+---api
-| authApi.js
-| axiosClient.js
-|
-+---components
-+---redux
-| | store.js
-| |
-| +---actions
-| | types.js
-| |
-| +---reducers
-| index.js
-|
-+---styles
-index.css
-index.scss
++---build
+|   +---assets
+|   |   \---images
+|   \---static
+|       +---css
+|       +---js
+|       \---media
++---coverage
+|   \---lcov-report
+|       +---api
+|       +---components
+|       |   +---Loader
+|       |   +---Logo
+|       |   +---MyNavLink
+|       |   \---ProtectedRoute
+|       +---features
+|       |   \---auth-feature
+|       |       +---login
+|       |       |   +---components
+|       |       |   |   +---FormGroup
+|       |       |   |   \---LoginForm
+|       |       |   \---pages
+|       |       +---main
+|       |       |   +---components
+|       |       |   \---pages
+|       |       \---register
+|       |           +---components
+|       |           \---pages
+|       +---helpers
+|       |   \---schema
+|       +---redux
+|       |   \---actions
+|       \---src
+|           +---api
+|           +---components
+|           |   +---Loader
+|           |   +---Logo
+|           |   +---MyNavLink
+|           |   \---ProtectedRoute
+|           +---constants
+|           +---features
+|           |   +---auth-feature
+|           |   |   +---login
+|           |   |   |   +---components
+|           |   |   |   |   +---FormGroup
+|           |   |   |   |   \---LoginForm
+|           |   |   |   \---pages
+|           |   |   +---main
+|           |   |   |   +---components
+|           |   |   |   \---pages
+|           |   |   \---register
+|           |   |       +---components
+|           |   |       |   \---RegisterForm
+|           |   |       \---pages
+|           |   \---uploadImage
+|           +---helpers
+|           |   \---schema
+|           +---layouts
+|           \---redux
+|               +---actions
+|               \---reducers
++---public
+|   \---assets
+|       \---images
+\---src
+    +---api
+    |   \---__test__
+    +---assets
+    |   +---images
+    |   \---styles
+    +---components
+    |   +---Loader
+    |   |   \---__test__
+    |   |       \---__snapshots__
+    |   +---Logo
+    |   |   \---__test__
+    |   |       \---__snapshots__
+    |   +---MyNavLink
+    |   |   \---__test__
+    |   |       \---__snapshots__
+    |   \---ProtectedRoute
+    |       \---__test__
+    |           \---__snapshots__
+    +---constants
+    +---features
+    |   +---auth-feature
+    |   |   +---login
+    |   |   |   +---components
+    |   |   |   |   +---FormGroup
+    |   |   |   |   |   \---__test__
+    |   |   |   |   |       \---__snapshots__
+    |   |   |   |   \---LoginForm
+    |   |   |   |       \---__test__
+    |   |   |   |           \---__snapshots__
+    |   |   |   \---pages
+    |   |   |       \---__test__
+    |   |   |           \---__snapshots__
+    |   |   +---main
+    |   |   |   +---components
+    |   |   |   |   \---__test__
+    |   |   |   |       \---__snapshots__
+    |   |   |   \---pages
+    |   |   |       \---__test__
+    |   |   |           \---__snapshots__
+    |   |   \---register
+    |   |       +---components
+    |   |       |   \---RegisterForm
+    |   |       |       \---__test__
+    |   |       \---pages
+    |   |           \---__test__
+    |   |               \---__snapshots__
+    |   \---uploadImage
+    |       \---__test__
+    |           \---__snapshots__
+    +---helpers
+    |   \---schema
+    |       \---__test__
+    +---layouts
+    |   \---__test__
+    |       \---__snapshots__
+    +---redux
+    |   +---actions
+    |   \---reducers
+    \---__mocks__
 ```
 
 ```javascript
