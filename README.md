@@ -91,6 +91,10 @@ npm start
 
 In the project directory, you can run:
 
+### `npm run deploy`
+
+Edit the deploy script to deploy this project on your surge domain
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
