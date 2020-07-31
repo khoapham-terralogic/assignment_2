@@ -9,35 +9,40 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Initialize app with create-react-app
 - [x] Done
 - [x] Implement logic
-- [ ] Write unit test
-- [ ] Finalize app
+- [x] Write unit test
+- [x] Finalize app
+
+* [ ] Fixing code to suit test
+* [x] Fixing test to match code xD
 
 ### Project structure
 
+```
 src
 | App.js
 | App.test.js
 | index.js
 | serviceWorker.js
 | setupTests.js
-|  
+|
 +---api
 | authApi.js
 | axiosClient.js
-|  
+|
 +---components
 +---redux
 | | store.js
-| |  
+| |
 | +---actions
 | | types.js
-| |  
+| |
 | +---reducers
 | index.js
-|  
+|
 +---styles
 index.css
 index.scss
+```
 
 ```javascript
 git clone
