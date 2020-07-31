@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <UserForm/> <UserInnerForm /> should render 1`] = `
+<form
+  onSubmit={[MockFunction]}
+>
+  <div
+    className="row row--single"
+  >
+    <div
+      className="user__container__body-main col-xs-12 col-md-6"
+    >
+      <UserFormGroup
+        defaultValue="asd"
+        id="fullName"
+        onChange={[MockFunction]}
+        placeholder="Full Name"
+        type="text"
+        value="asd"
+      />
+    </div>
+  </div>
+  <div
+    className="row row--multi"
+  >
+    <div
+      className="user__container__body-main col-xs-12 col-md-6"
+    >
+      <UserFormGroup
+        defaultValue="asd@asd.com"
+        id="email"
+        onChange={[MockFunction]}
+        placeholder="Email"
+        type="email"
+        value="asd@asd.com"
+      />
+    </div>
+    <div
+      className="user__container__body-main col-xs-12 col-md-6"
+    >
+      <UserFormGroup
+        defaultValue="0123456789"
+        id="phoneNumber"
+        onChange={[MockFunction]}
+        placeholder="Phone"
+        type="text"
+        value="0123456789"
+      />
+    </div>
+  </div>
+  <div
+    className="col-xs-12 user__container__body-main-line"
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="user__container__body-main-description col-xs-12 col-md-6"
+    >
+      Change password
+    </div>
+  </div>
+  <div
+    className="row row--single"
+  >
+    <div
+      className="user__container__body-main col-xs-12 col-md-6"
+    >
+      <UserFormGroup
+        id="currentPassword"
+        onChange={[MockFunction]}
+        placeholder="Current password"
+        rearSvg="Suche03.svg"
+        rearSvgShow="Suche04.svg"
+        type="password"
+        value="123456789@Ab"
+      />
+    </div>
+  </div>
+  <div
+    className="row row--multi"
+  >
+    <div
+      className="user__container__body-main col-xs-12 col-md-6"
+    >
+      <UserFormGroup
+        id="newPassword"
+        onChange={[MockFunction]}
+        placeholder="New password"
+        rearSvg="Suche03.svg"
+        rearSvgShow="Suche04.svg"
+        type="password"
+        value="123456789@Aa"
+      />
+    </div>
+    <div
+      className="user__container__body-main col-xs-12 col-md-6"
+    >
+      <UserFormGroup
+        id="confirmPassword"
+        onChange={[MockFunction]}
+        placeholder="Confirm password"
+        rearSvg="Suche03.svg"
+        rearSvgShow="Suche04.svg"
+        type="password"
+        value="123456789@Aa"
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xs-12 col-md-6 login-body-btn-group"
+    >
+      <button
+        className="btn nav-link nav-link-btn"
+        type="submit"
+      >
+        Save
+      </button>
+      <MyNavLink
+        className=""
+        lable="Log out"
+        toPath="#"
+      />
+    </div>
+  </div>
+</form>
+`;

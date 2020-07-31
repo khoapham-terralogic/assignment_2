@@ -58,12 +58,9 @@ export const updateProfile = ({ email, name, phone, avatar, password, currentPas
                 toast.info(res[1].msg)
             }
         } catch (error) {
-            console.log(error);
             dispatch({ type: USER_ACTION_FAIL, status: "SOMETHING_WRONG" })
         }
     } catch (error) {
-        // dispatch(returnError(error.response.data, error.response.status, "UPDATE_FAILED"))
-        console.log(error);
         dispatch({ type: USER_ACTION_FAIL, status: "SOMETHING_WRONG" })
     }
 }

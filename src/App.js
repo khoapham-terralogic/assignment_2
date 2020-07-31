@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 //LAZY LOAD
 const AuthLayout = React.lazy(() => import('./layouts/AuthLayout'))
 const UserLayout = React.lazy(() => import('./layouts/UserLayout'))
+const NotFoundLayout = React.lazy(() => import('./layouts/NotFoundLayout'))
 
 
 const override = css`
@@ -41,6 +42,7 @@ const App = ({
           <Route path='/auth' render={() => <AuthLayout />} />
           {/* <Route path='/user' exact render={() => <UserLayout />} /> */}
           <ProtectedRoute path='/user' exact component={UserLayout} isAuth={isAuth} />
+          <Route render={() => <NotFoundLayout />} />
         </Switch>
         <ToastContainer
           className="custom-toast"

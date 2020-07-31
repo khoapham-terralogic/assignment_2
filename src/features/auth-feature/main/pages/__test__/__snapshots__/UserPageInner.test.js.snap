@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <UserPageInner /> should render 1`] = `
+<div
+  className="user__container__body"
+>
+  <CustomModal
+    isLoading={false}
+    isOpen={false}
+    modalCallback={[Function]}
+    toggle={[Function]}
+    uploadImage={[MockFunction]}
+  />
+  <div
+    className="row row--single row--header"
+  >
+    <div
+      className="col-xs-12 col-md-6 user__container__body__header"
+    >
+      <div
+        className="user__container__body__header-img-container"
+      >
+        <img
+          alt="avatar"
+          className="user__container__body__header-img"
+          src="http://api.terralogic.ngrok.io/another-link-to-avatar.jpg"
+        />
+        <img
+          alt="edit"
+          className="user__container__body__header-subimg"
+          data-testid="toggle-btn"
+          onClick={[Function]}
+          src="edit_photo.svg"
+        />
+      </div>
+      <div
+        className="user__container__body__header-name"
+      />
+    </div>
+  </div>
+  <WithFormik(UserInnerForm)
+    avatar="link-to-avatar.jpg"
+    logout={[MockFunction]}
+    updateProfile={[MockFunction]}
+    user={
+      Object {
+        "avatar": "another-link-to-avatar.jpg",
+        "email": "haha@mail.com",
+        "name": "haha",
+        "phone": "0123456789",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Test <UserPageInner /> should render loading component if isLoading is true 1`] = `
+<div
+  className="user__container__body"
+>
+  <div
+    className="loadingBackground"
+  >
+    <ClipSpinner
+      color="#fff"
+      size={45}
+    />
+  </div>
+  <CustomModal
+    isLoading={true}
+    isOpen={false}
+    modalCallback={[Function]}
+    toggle={[Function]}
+    uploadImage={[MockFunction]}
+  />
+  <div
+    className="row row--single row--header"
+  >
+    <div
+      className="col-xs-12 col-md-6 user__container__body__header"
+    >
+      <div
+        className="user__container__body__header-img-container"
+      >
+        <img
+          alt="avatar"
+          className="user__container__body__header-img"
+          src="http://api.terralogic.ngrok.io/another-link-to-avatar.jpg"
+        />
+        <img
+          alt="edit"
+          className="user__container__body__header-subimg"
+          data-testid="toggle-btn"
+          onClick={[Function]}
+          src="edit_photo.svg"
+        />
+      </div>
+      <div
+        className="user__container__body__header-name"
+      />
+    </div>
+  </div>
+  <WithFormik(UserInnerForm)
+    avatar="link-to-avatar.jpg"
+    logout={[MockFunction]}
+    updateProfile={[MockFunction]}
+    user={
+      Object {
+        "avatar": "another-link-to-avatar.jpg",
+        "email": "haha@mail.com",
+        "name": "haha",
+        "phone": "0123456789",
+      }
+    }
+  />
+</div>
+`;

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <UserLayout /> should render 1`] = `
+<div
+  className="user__container"
+>
+  <div
+    className="row user__container__header"
+  >
+    <div
+      className="col-xs-12 user__container__header__wrapper"
+    >
+      <div
+        className="user__container__header__title"
+      >
+        My Profile
+      </div>
+      <div
+        className="user__container__header__description"
+      >
+        Manage your profile and contact information.
+      </div>
+    </div>
+  </div>
+  <Connect(UserPage) />
+</div>
+`;
+
+exports[`Test <UserLayout /> should render correctly 1`] = `
+<div
+  className="user__container"
+>
+  <div
+    className="row user__container__header"
+  >
+    <div
+      className="col-xs-12 user__container__header__wrapper"
+    >
+      <div
+        className="user__container__header__title"
+      >
+        My Profile
+      </div>
+      <div
+        className="user__container__header__description"
+      >
+        Manage your profile and contact information.
+      </div>
+    </div>
+  </div>
+  <Connect(UserPage) />
+</div>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <MyNavLink1 /> It should render 1`] = `
+<NavLink
+  className="nav-link nav-link-custom"
+  data-testid="navlink"
+  onClick={[MockFunction]}
+  to="/auth/register"
+>
+  <div
+    className="nav-item"
+  >
+    Register
+  </div>
+</NavLink>
+`;

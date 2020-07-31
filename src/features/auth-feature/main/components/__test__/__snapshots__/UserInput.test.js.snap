@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <UserInput /> should render 1`] = `
+<div
+  className="form-group "
+>
+  <input
+    className="form-control"
+    id="name"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+  <div
+    className="form-control__floating-label"
+    onClick={[Function]}
+  >
+    Full name
+  </div>
+  <img
+    alt=""
+    className="form-group-rearSvg"
+    onClick={[Function]}
+    src="../Images/rearSvg.svg"
+  />
+</div>
+`;

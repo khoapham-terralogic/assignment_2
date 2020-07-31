@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My Connected React-Redux Component should render with given state from Redux store 1`] = `
+<div
+  className="login"
+>
+  <div
+    className="login-header"
+  >
+    register your account
+  </div>
+  <form
+    className="login-body"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-container"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="email"
+        >
+          email
+        </label>
+        <div
+          className="email-group"
+        >
+          <img
+            alt=""
+            className="form-group-frontSvg"
+            src="Suche.svg"
+          />
+          <input
+            className="form-control email-group"
+            data-testid="input"
+            id="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Enter your email"
+            type="email"
+            value=""
+          />
+          <img
+            alt=""
+            className="form-group-rearSvg"
+            data-testid="toggle-image"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-container"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="password"
+        >
+          password
+        </label>
+        <div
+          className="password-group"
+        >
+          <img
+            alt=""
+            className="form-group-frontSvg"
+            src="Suche02.svg"
+          />
+          <input
+            className="form-control password-group"
+            data-testid="input"
+            id="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Enter your password"
+            type="password"
+            value=""
+          />
+          <img
+            alt=""
+            className="form-group-rearSvg"
+            data-testid="toggle-image"
+            onClick={[Function]}
+            src="Suche03.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-container"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="conPassword"
+        >
+          confirm password
+        </label>
+        <div
+          className="conPassword-group"
+        >
+          <img
+            alt=""
+            className="form-group-frontSvg"
+            src="Suche02.svg"
+          />
+          <input
+            className="form-control conPassword-group"
+            data-testid="input"
+            id="confirmPassword"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Enter your password"
+            type="password"
+            value=""
+          />
+          <img
+            alt=""
+            className="form-group-rearSvg"
+            data-testid="toggle-image"
+            onClick={[Function]}
+            src="Suche03.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-container"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="fullName"
+        >
+          full name
+        </label>
+        <div
+          className="fullName-group"
+        >
+          <img
+            alt=""
+            className="form-group-frontSvg"
+            src="Suche.svg"
+          />
+          <input
+            className="form-control fullName-group"
+            data-testid="input"
+            id="fullName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Enter your name"
+            type="text"
+            value=""
+          />
+          <img
+            alt=""
+            className="form-group-rearSvg"
+            data-testid="toggle-image"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-container"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="phoneNumber"
+        >
+          phone number
+        </label>
+        <div
+          className="phoneNumber-group"
+        >
+          <img
+            alt=""
+            className="form-group-frontSvg"
+            src="Suche.svg"
+          />
+          <input
+            className="form-control phoneNumber-group"
+            data-testid="input"
+            id="phoneNumber"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Enter your phone"
+            type="text"
+            value=""
+          />
+          <img
+            alt=""
+            className="form-group-rearSvg"
+            data-testid="toggle-image"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group login-body-btn-group"
+    >
+      <a
+        aria-current="page"
+        className="nav-link nav-link-custom active"
+        data-testid="navlink"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <div
+          className="nav-item"
+        >
+          Back
+        </div>
+      </a>
+      <button
+        className="btn nav-link nav-link-btn"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;

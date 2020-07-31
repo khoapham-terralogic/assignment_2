@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <FormGroup /> Should contain required props It should contain required props 1`] = `
+<FormGroup
+  frontSvg="../Images/frontSvg.svg"
+  label="email"
+  labelName="email"
+  rearSvg="../Images/rearSvg.svg"
+  rearSvgShow="../Images/rearSvgShow.svg"
+  type="text"
+>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor="email"
+    >
+      email
+    </label>
+    <div
+      className="email-group"
+    >
+      <img
+        alt=""
+        className="form-group-frontSvg"
+        src="../Images/frontSvg.svg"
+      />
+      <input
+        className="form-control email-group"
+        data-testid="input"
+        type="text"
+      />
+      <img
+        alt=""
+        className="form-group-rearSvg"
+        data-testid="toggle-image"
+        onClick={[Function]}
+        src="../Images/rearSvg.svg"
+      />
+    </div>
+  </div>
+</FormGroup>
+`;

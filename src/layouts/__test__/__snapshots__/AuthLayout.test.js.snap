@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <AuthLayout /> should render 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <AuthLayout>
+    <section
+      className="auth"
+    >
+      <div
+        className="auth__container"
+      >
+        <div
+          className="auth__container__left"
+        >
+          <Logo>
+            <div
+              className="logo"
+              data-testid="logo"
+            >
+              <NavLink
+                to="/"
+              >
+                <Link
+                  aria-current="page"
+                  className="active"
+                  style={Object {}}
+                  to={
+                    Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": null,
+                    }
+                  }
+                >
+                  <LinkAnchor
+                    aria-current="page"
+                    className="active"
+                    href="/"
+                    navigate={[Function]}
+                    style={Object {}}
+                  >
+                    <a
+                      aria-current="page"
+                      className="active"
+                      href="/"
+                      onClick={[Function]}
+                      style={Object {}}
+                    >
+                      <img
+                        alt="logo"
+                        className="logo-img"
+                        src="brand-logo.svg"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </NavLink>
+              <p
+                className="logo-title"
+                data-testid="logo-title"
+              >
+                start your personal photo experience
+              </p>
+            </div>
+          </Logo>
+          <Switch />
+        </div>
+        <div
+          className="auth__container__right"
+        >
+          <img
+            alt="img"
+            className="auth__container__right-img"
+            src="solution-experts.png"
+          />
+        </div>
+      </div>
+    </section>
+  </AuthLayout>
+</Router>
+`;

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 import MyDropzone from './MyDropZone';
 
-const CustomModal = ({ isOpen, toggle, isLoading, uploadImage, modalCallback }) => {
+const CustomModal = ({ isOpen, toggle, uploadImage, modalCallback }) => {
     const [file, setFile] = useState(null)
     const callback = data => {
         setFile(data[0])

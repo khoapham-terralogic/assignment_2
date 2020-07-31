@@ -4,10 +4,10 @@ import { eyeSvg, eyeSvgShow } from '../../../../constants'
 import { formSchema } from '../../../../helpers/schema'
 import { MyNavLink } from '../../../../components';
 import UserFormGroup from './UserInput';
-import { logoutUser } from '../../../../redux/actions/authAction';
-import store from '../../../../redux/store';
+// import { logoutUser } from '../../../../redux/actions/authAction';
+// import store from '../../../../redux/store';
 
-const MyForm = props => {
+export const UserInnerForm = props => {
     const {
         values,
         touched,
@@ -15,10 +15,11 @@ const MyForm = props => {
         handleChange,
         // handleBlur,
         handleSubmit,
+        logout
     } = props;
-    const logout = () => {
-        store.dispatch(logoutUser())
-    }
+    // const logout = () => {
+    //     store.dispatch(logoutUser())
+    // }
     return (
         <form onSubmit={handleSubmit}>
             <div className="row row--single">
@@ -143,6 +144,6 @@ const UserForm = withFormik({
         const { email, phoneNumber, fullName, currentPassword, newPassword } = values
         props.updateProfile({ email, phone: phoneNumber, name: fullName, currentPassword, password: newPassword, avatar: props.avatar || JSON.parse(localStorage.getItem("user")).avatar })
     }
-})(MyForm);
+})(UserInnerForm);
 
 export default UserForm

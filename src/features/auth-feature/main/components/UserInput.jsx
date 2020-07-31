@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types'
 
-const UserFormGroup = ({ id, value, type, placeholder, rearSvg, readonly, rearSvgShow, ...rest }) => {
+const UserFormGroup = ({ id, value, type, placeholder, rearSvg, rearSvgShow, ...rest }) => {
     const [isActive, setIsActive] = useState(false)
     const [isShow, setIsShow] = useState(false)
     const handleShow = () => { setIsShow(!isShow) }

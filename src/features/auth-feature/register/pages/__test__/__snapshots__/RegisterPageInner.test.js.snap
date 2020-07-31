@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <RegisterPageInner /> should render 1`] = `
+<div
+  className="login"
+>
+  <div
+    className="login-header"
+  >
+    register your account
+  </div>
+  <WithFormik(MyForm)
+    registerUser={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`Test <RegisterPageInner /> should render loading component if isLoading is true 1`] = `
+<div
+  className="loadingBackground"
+>
+  <ClipSpinner
+    color="#fff"
+    size={40}
+  />
+</div>
+`;

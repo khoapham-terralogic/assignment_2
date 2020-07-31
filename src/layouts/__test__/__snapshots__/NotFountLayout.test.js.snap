@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <NotFoundLayout /> should render 1`] = `
+<div>
+  CON CAC
+</div>
+`;

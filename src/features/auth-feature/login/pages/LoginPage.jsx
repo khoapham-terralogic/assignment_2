@@ -1,30 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-import { useHistory } from 'react-router-dom';
-
-import { ClipSpinner } from '../../../../components'
-
 import { loginUser } from '../../../../redux/actions/authAction';
-import LoginForm from '../components/LoginForm';
+import LoginPageInner from './LoginPageInner';
 
 const LoginPage = ({ isLoading, loginUser, isAuth }) => {
-    const history = useHistory()
-
-    useEffect(() => {
-        if (isAuth) history.push("/user")
-    })
     return (
-        <div className="login">
-            {isLoading ? <div className="loadingBackground"><ClipSpinner color="#fff" /></div> : null}
-            <div className="login-header">login your account</div>
-            <LoginForm loginUser={loginUser} isLoading={isLoading} />
-        </div>
+        <LoginPageInner isAuth={isAuth} isLoading={isLoading} loginUser={loginUser} />
     );
 }
 
 LoginPage.propTypes = {
     loginUser: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    isAuth: PropTypes.bool.isRequired
 }
 
 export default connect(

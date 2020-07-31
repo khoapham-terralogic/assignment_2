@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ClipSpinner /> It should render a default white spinner with a size of 15 1`] = `
+<div>
+  <Loader
+    color="#fff"
+    css=""
+    loading={true}
+    size={15}
+  />
+</div>
+`;

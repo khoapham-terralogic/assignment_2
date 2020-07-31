@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo /> It should render 1`] = `
+<div
+  className="logo"
+  data-testid="logo"
+>
+  <NavLink
+    to="/"
+  >
+    <img
+      alt="logo"
+      className="logo-img"
+      src="brand-logo.svg"
+    />
+  </NavLink>
+  <p
+    className="logo-title"
+    data-testid="logo-title"
+  >
+    start your personal photo experience
+  </p>
+</div>
+`;

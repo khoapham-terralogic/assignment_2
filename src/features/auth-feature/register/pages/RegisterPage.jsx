@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
-import RegisterForm from '../RegisterForm';
+import React from 'react';
 import PropTypes from 'prop-types'
-import { useHistory } from 'react-router-dom';
-import { ClipSpinner } from '../../../../components';
 import { connect } from 'react-redux';
 import { registerUser } from '../../../../redux/actions/authAction'
+import RegisterPageInner from './RegisterPageInner';
 
 const RegisterPage = ({
     registerUser,
@@ -12,16 +10,17 @@ const RegisterPage = ({
     isAuth,
     msg
 }) => {
-    const history = useHistory()
-    useEffect(() => {
-        if (isAuth) history.push("/user")
-    }, [msg, isAuth, history])
+    // const history = useHistory()
+    // useEffect(() => {
+    //     if (isAuth) history.push("/user")
+    // }, [msg, isAuth, history])
     return (
-        <div className="login">
-            {isLoading ? <div className="loadingBackground"><ClipSpinner size={40} color="#fff" /></div> : null}
-            <div className="login-header">register your account</div>
-            <RegisterForm registerUser={registerUser} />
-        </div>
+        // <div className="login">
+        //     {isLoading ? <div className="loadingBackground"><ClipSpinner size={40} color="#fff" /></div> : null}
+        //     <div className="login-header">register your account</div>
+        //     <RegisterForm registerUser={registerUser} />
+        // </div>
+        <RegisterPageInner registerUser={registerUser} isAuth={isAuth} isLoading={isLoading} msg={msg} />
     );
 }
 
