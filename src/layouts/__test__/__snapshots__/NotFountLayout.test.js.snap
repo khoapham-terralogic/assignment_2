@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test <NotFoundLayout /> should render 1`] = `
-<div>
-  CON CAC
-</div>
+<section
+  className="notfound-layout"
+>
+  <div
+    className="notfound-layout__container"
+  >
+    404 not found
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      Back to home page
+    </button>
+  </div>
+</section>
 `;

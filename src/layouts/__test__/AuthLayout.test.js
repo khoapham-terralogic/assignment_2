@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import AuthLayout from '../AuthLayout';
 import { Router, MemoryRouter } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-import LoginPage from '../../features/auth-feature/login/pages/LoginPage';
+import LoginPage from '../../pages/Login/LoginPageConnectWrapper';
 const history = createBrowserHistory("/auth/login")
 describe('Test <AuthLayout />', () => {
     it('should render', () => {
