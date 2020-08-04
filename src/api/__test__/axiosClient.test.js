@@ -1,12 +1,13 @@
-import axiosClient from '../axiosClient'
+// import axiosClient from '../axiosClient'
+import mockAxios from '../../__mocks__/axios'
 
 describe('Test axios instance', () => {
     it('should resolve promise', () => {
-        expect(axiosClient.interceptors.response.handlers[0].fulfilled({ data: 'foo' })).toBe('foo');
+        expect(mockAxios.interceptors.response.handlers[0].fulfilled({ data: 'foo' })).toBe('foo');
 
     });
     it('should reject error', () => {
-        expect(axiosClient.interceptors.response.handlers[0].rejected({
+        expect(mockAxios.interceptors.response.handlers[0].rejected({
             response: {
                 statusText: 'NotFound',
                 status: 404,

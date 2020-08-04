@@ -28,10 +28,10 @@ describe('Test <LoginPageInner />', () => {
             useEffect.mockImplementationOnce(f => f());
         };
         beforeEach(() => {
+            const wrapper = shallow(<LoginPageInner isLoading={false} isAuth={true} loginUser={jest.fn()} />);
             useEffect = jest.spyOn(React, "useEffect").mockImplementation(f => f());
             mockUseEffect();
             mockUseEffect();
-            const wrapper = shallow(<LoginPageInner isLoading={false} isAuth={true} loginUser={jest.fn()} />);
             expect(wrapper.find(LoginPageInner)).toHaveLength(0)
         });
     })

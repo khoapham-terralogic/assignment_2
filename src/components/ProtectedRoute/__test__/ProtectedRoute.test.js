@@ -1,22 +1,36 @@
 import React from 'react'
 import ProtectedRoute from '..'
 import { shallow, mount } from 'enzyme'
-import { Redirect, BrowserRouter } from 'react-router-dom'
-import { render } from 'react-dom'
+import { MemoryRouter } from 'react-router-dom'
+
 
 const MockComponent = () => <div />
 MockComponent.displayName = 'MockComponent';
 
 describe("Test <ProtectedRoute />", () => {
     describe("If not authenticated", () => {
-        const wrapper = shallow(
-            <BrowserRouter>
-                <ProtectedRoute to="/user" isAuth={false} component={<MockComponent />} />
-            </BrowserRouter>
-        )
         // console.log(wrapper.debug());
         it("It should redirect to login if not authenticated", () => {
-            expect(wrapper.find('[data-testid="redirect"]')).toHaveLength(0)
+            const wrapper = mount(
+                <MemoryRouter initialEntries={['/']}>
+                    <ProtectedRoute path="/test" exact isAuth={false} component={MockComponent} />
+                </MemoryRouter>
+            )
+            // expect(wrapper.find('[data-testid="redirect"]')).pathHaveLength(0)
+            expect(wrapper.find(MockComponent)).toHaveLength(0)
+
+        })
+        it("It should render component if authenticated", () => {
+            const wrapper = mount(
+                <MemoryRouter initialEntries={['/']}>
+                    <ProtectedRoute path="/test" exact isAuth={true} component={MockComponent} />
+                </MemoryRouter>
+            )
+            console.log(wrapper.find('Route').prop('render'))
+
+            // expect(wrapper.find('[data-testid="redirect"]')).toHaveLength(0)
+            expect(wrapper.find(MockComponent)).toHaveLength(1)
+
         })
     })
     // describe("If authenticated", () => {

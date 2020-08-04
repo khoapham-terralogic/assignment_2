@@ -38,13 +38,14 @@ describe('User api test', () => {
         expect(data).toEqual({ data: {} })
     });
     it('should call a post update request and return data', async () => {
-        mockAxios.post.mockImplementationOnce(async () =>
+        mockAxios.patch.mockImplementationOnce(async () =>
             Promise.resolve({ data: {} })
         )
         const data = await userApi.update(mockUpdate, config)
+        console.log(data);
         expect(data).toEqual({ data: {} })
     });
-    it('should call a post update request and return data', async () => {
+    it('should call a change password request and return data', async () => {
         mockAxios.post.mockImplementationOnce(async () =>
             Promise.resolve({ data: {} })
         )

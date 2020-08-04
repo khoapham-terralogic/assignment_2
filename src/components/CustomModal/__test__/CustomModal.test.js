@@ -27,16 +27,46 @@ describe('Test <CustomModal />', () => {
         // expect(changeState).toBeTruthy()
 
     })
-    it('should render button if file is not empty', () => {
-        const wrapper = shallow(<CustomModal {...props} />)
-        const instance = wrapper.instance()
-        instance.setState('file', 'somefile')
-        expect(wrapper.find('.btn')).toHaveLength(1)
+    it('should not render button if file is empty', () => {
+        // const file = new File([''], 'filename.txt', {
+        //     type: 'text/plain',
+        //     lastModified: new Date()
+        // })
+        let useEffect
+        const mockUseEffect = () => {
+            useEffect.mockImplementationOnce(f => f());
+        };
+        beforeEach(() => {
+            useEffect = jest.spyOn(React, "useEffect").mockImplementation(f => f());
+            mockUseEffect();
+            mockUseEffect();
+            const wrapper = shallow(<CustomModal {...props} />);
+            expect(wrapper.find(".btn")).toHaveLength(0)
+        });
     })
-    it('should call submit if button is click', () => {
-        const wrapper = mount(<CustomModal {...props} />)
-        wrapper.instance().setFile("somefile")
-        console.log(wrapper.debug())
-        // expect(handleSubmit).toHaveBeenCalled()
+    // it('should call submit if button is click', () => {
+    //     const wrapper = mount(<CustomModal {...props} />)
+    //     wrapper.instance().setFile("somefile")
+    //     console.log(wrapper.debug())
+    //     // expect(handleSubmit).toHaveBeenCalled()
+    // })
+    it('should render button if file is not empty', () => {
+
+        let useEffect
+        const mockUseEffect = () => {
+            useEffect.mockImplementationOnce(f => f());
+        };
+        beforeEach(() => {
+            useEffect = jest.spyOn(React, "useEffect").mockImplementation(f => f());
+            const stateSetter = jest.fn()
+            jest.spyOn(React, 'useState')
+                //Simulate that mode state value was set to 'new mode value'
+                .mockImplementation(stateValue => [stateValue = {}, stateSetter])
+            mockUseEffect();
+            mockUseEffect();
+            const wrapper = shallow(<CustomModal {...props} />);
+            expect(wrapper.find(".btn")).toHaveLength(1)
+        });
+        // expect(wrapper.props()).toBe({})
     })
 })
